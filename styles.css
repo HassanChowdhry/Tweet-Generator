@@ -1,6 +1,3 @@
-body {
-  margin: 2rem;
-}
 
 h1 {
   text-align: center;
@@ -9,28 +6,28 @@ h1 {
 /* Two Sub Sections */
 .tweet-grid {
   background-color: #FFF5F5;
-  margin: 10rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 5rem;
+  margin: 5rem;
+  padding: 2rem;
 }
 
 /* 1st half section */
 .tweet-info {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 2rem;
 }
 
 /* Other Part of Half Section */
 .tweet-stats {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 2rem;
 }
 
-
-
+.stats-count {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 
 
