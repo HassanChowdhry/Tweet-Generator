@@ -26,6 +26,107 @@
 
 <body>
 
+  <h1> Custom Tweet Generator </h1>
+
+  <section id="tweet">
+    <div class="tweet-grid">
+
+      <!-- TWO SUB-SECTIONS  -->
+      <div class="tweet-info">
+        <div>
+          <h3> Tweet User Details </h3>
+        </div>
+
+
+        <div style="margin-top: 2rem;">
+          <label for="name">Name:</label>
+          <button class="btn verified"> Verified </button>
+          <br>
+          <textarea name="name" id="name" cols="35" rows="1" style="resize: none;"></textarea>
+        </div>
+
+        <div>
+          <label for="username">Username:</label>
+          <br>
+          <textarea name="username" id="username" cols="35" rows="1" style="resize: none;"></textarea>
+        </div>
+
+        <div>
+          <label for="tweet-message">Tweet:</label>
+          <button class="btn"> Upload Images </button>
+          <br>
+          <textarea name="tweet-message" id="tweet-message" cols="35" rows="3"></textarea>
+        </div>
+
+        <div>
+          <button class="btn"> Upload pfp </button>
+          <button class="btn"> remove pfp </button>
+        </div>
+
+      </div>
+      <!-- HALF OF SECTIONS  -->
+      <div class="tweet-stats">
+        <div>
+          <h3> Tweet Stats </h3>
+        </div>
+
+
+        <div>
+          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <label for="date"> Date: </label>
+          <br>
+          <input type="date" name="date" id="date">
+        </div>
+
+        <div>
+          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <label for="time"> Time: </label>
+          <br>
+          <input type="time" name="time" id="time">
+        </div>
+
+        <div>
+          <label for="twitter-client"> User Device </label>
+          <br>
+          <textarea name="twitter-client" id="twitter-client" cols="35" rows="1" style="resize: none;"></textarea>
+        </div>
+
+        <div class="stats-count">
+          <div>
+            <label for="retweets"> Retweets </label>
+            <br>
+            <input type="text" name="retweets" id="retweets">
+          </div>
+
+          <div>
+            <label for="quotes"> Quotes </label>
+            <br>
+            <input type="text" name="quotes" id="quotes">
+          </div>
+
+          <div>
+            <label for="likes"> Likes </label>
+            <br>
+            <input type="text" name="likes" id="likes">
+          </div>
+
+        </div>
+        <!-- END OF SUB-SECTIONS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREVIEW -->
+  <section id="preview">
+
+  </section>
+
+  <!-- Tweet Generator -->
+  <section id="tweet-generator">
+
+  </section>
+
   <script src="index.js"></script>
 </body>
 
