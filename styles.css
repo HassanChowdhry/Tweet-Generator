@@ -61,15 +61,49 @@ h1 {
 
 /* Preview */
 
+.preview-grid {
+  padding: 10rem;
+  background-color: lightblue;
+}
+
 .prev-container {
-  background-color: lightblue;  /* change later*/
   display: grid;
-  
+  grid-template-columns: 1fr;
+  padding: 5rem;
+  background-color: white;
 }
-
-.pfp img {
+.top-container {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.pfp {
+  text-align: right;
+}
+.pfp img{
   border-radius: 100%;
+  width: 40%;
+  margin-right: 1rem;
+
+}
+.dots img {
+  width: 5%;
 }
 
+.middle-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr;
+}
+
+.tweet {
+  text-align: center;
+}
+.tweet-details {
+  margin-left: 17rem; /* change later  (make it more dynamic) */
+}
+.tweet-details i {
+  margin: 0 0.7rem;
+}
 
 
