@@ -90,6 +90,7 @@ h1 {
   width: 5%;
 }
 
+           /* middle part */
 .middle-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -106,4 +107,22 @@ h1 {
   margin: 0 0.7rem;
 }
 
+            /* bottom part */
 
+.bottom-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.tweet-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.tweet-interact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tweet-interact div img {
+  width: 15%;
+}
