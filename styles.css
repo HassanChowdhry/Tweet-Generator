@@ -5,7 +5,7 @@ h1 {
 
 /* Two Sub Sections */
 .tweet-grid {
-  background-color: #FFF5F5;
+  background-color: lightblue;  /* change later*/
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 5rem;
@@ -58,3 +58,18 @@ h1 {
 .btn:active {
   transform: translateY(-1px);
 }
+
+/* Preview */
+
+.prev-container {
+  background-color: lightblue;  /* change later*/
+  display: grid;
+  
+}
+
+.pfp img {
+  border-radius: 100%;
+}
+
+
+
