@@ -37,25 +37,27 @@
           <h3> Tweet User Details </h3>
         </div>
 
-
-        <div style="margin-top: 2rem;">
-          <label for="name">Name:</label>
+        <div>
           <button class="btn verified"> Verified </button>
-          <br>
-          <textarea name="name" id="name" cols="35" rows="1" style="resize: none;"></textarea>
         </div>
 
-        <div>
-          <label for="username">Username:</label>
-          <br>
-          <textarea name="username" id="username" cols="35" rows="1" style="resize: none;"></textarea>
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">Name</label>
         </div>
 
-        <div>
-          <label for="tweet-message">Tweet:</label>
-          <button class="btn"> Upload Images </button>
-          <br>
-          <textarea name="tweet-message" id="tweet-message" cols="35" rows="3"></textarea>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">Username</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 100px; width: 35rem;"></textarea>
+          <label for="floatingTextarea2">Tweet</label>
         </div>
 
         <div>
@@ -85,29 +87,29 @@
           <input type="time" name="time" id="time">
         </div>
 
-        <div>
-          <label for="twitter-client"> User Device </label>
-          <br>
-          <textarea name="twitter-client" id="twitter-client" cols="35" rows="1" style="resize: none;"></textarea>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">User Device</label>
         </div>
 
         <div class="stats-count">
-          <div>
-            <label for="retweets"> Retweets </label>
-            <br>
-            <input type="text" name="retweets" id="retweets">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Retweets </label>
           </div>
 
-          <div>
-            <label for="quotes"> Quotes </label>
-            <br>
-            <input type="text" name="quotes" id="quotes">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Quotes </label>
           </div>
 
-          <div>
-            <label for="likes"> Likes </label>
-            <br>
-            <input type="text" name="likes" id="likes">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Likes </label>
           </div>
 
         </div>
@@ -154,6 +156,11 @@
             <strong> Create a fake tweet to fool your freinds!!! </strong>
           </div>
 
+
+        </div>
+
+        <div class="bottom-container">
+
           <div class="tweet-details">
 
             <i> 2:30 AM </i>
@@ -162,13 +169,9 @@
 
           </div>
 
-        </div>
-
-        <div class="bottom-container">
-
           <hr>
 
-          <div class="tweet-stats">
+          <div class="tweet-popularity">
 
             <div>
               <strong> 20 </strong> <i> retweets </i>
@@ -183,7 +186,7 @@
             </div>
 
           </div>
-          
+
           <hr>
 
           <div class="tweet-interact">
