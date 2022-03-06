@@ -73,40 +73,40 @@
 
 
         <div>
-          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="date"> Date: </label>
           <br>
-          <input type="date" name="date" id="date">
+          <input class="enter-date" type="date" name="date" id="date">
         </div>
 
         <div>
-          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="time"> Time: </label>
           <br>
-          <input type="time" name="time" id="time">
+          <input class="enter-time" type="time" name="time" id="time">
         </div>
 
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+          <textarea class="form-control enter-userdevice" placeholder="Leave a comment here" id="floatingTextarea2"
             style="height: 60px; width: 35rem; resize: none;"></textarea>
           <label for="floatingTextarea2">User Device</label>
         </div>
 
         <div class="stats-count">
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Retweets </label>
           </div>
 
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Quotes </label>
           </div>
 
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Likes </label>
           </div>
@@ -163,9 +163,10 @@
 
           <div class="tweet-details">
 
-            <i> 2:30 AM </i>
-            <i> August 12, 2022</i>
-            <i> Twitter for Android </i>
+            <i class="time"> 2:30 AM </i>
+            <i class="date"> August 12, 2022</i>
+            <i class="userdevice"> Twitter for Android </i>  <!-- TODO: add options to user Device -->
+
 
           </div>
 
@@ -174,15 +175,15 @@
           <div class="tweet-popularity">
 
             <div>
-              <strong> 20 </strong> <i> retweets </i>
+              <strong class="retweets"> 20 </strong> <i> retweets </i>
             </div>
 
             <div>
-              <strong> 40 </strong> <i> quotes </i>
+              <strong class="quotes"> 40 </strong> <i> quotes </i>
             </div>
 
             <div>
-              <strong> 2220 </strong> <i> likes </i>
+              <strong class="likes"> 2300 </strong> <i> likes </i>
             </div>
 
           </div>
