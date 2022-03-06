@@ -29,14 +29,15 @@ enterTweet.addEventListener('input', addTweet);
 
 // second half of tweet
 
-// adding class variables
+// adding variables for entering details part
 const enterTime = document.querySelector('.enter-time');
 const enterDate = document.querySelector('.enter-date'); // TODO: change format to match twitters'  
 const enterUserDevice = document.querySelector('.enter-userdevice');
 const enterRetweets = document.querySelector('.enter-retweets');
 const enterQuotes = document.querySelector('.enter-quotes');
-const enterLikes = document.querySelector('enter-likes');
+const enterLikes = document.querySelector('.enter-likes');
 
+// adding variables for preview part
 const prevTime = document.querySelector('.time');
 const prevDate = document.querySelector('.date');
 const prevUserDevice = document.querySelector('.userdevice');
@@ -45,7 +46,6 @@ const prevQuotes = document.querySelector('.quotes');
 const prevLikes = document.querySelector('.likes');
 
 // functions for event listeners to change preview
-
 function addTime() {
   prevTime.innerHTML = enterTime.value.trim();
 }
@@ -65,8 +65,10 @@ function addRetweets() {
 function addQuotes() {
   prevQuotes.innerHTML = enterQuotes.value.trim();
 }
+
 function addLikes() {
-  prevLikes.innerHTML = enterLikes.value.trim(); // TODO: fix this
+  prevLikes.innerHTML = enterLikes.value;
+
 }
 
 // event listeners to change prev
