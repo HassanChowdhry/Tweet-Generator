@@ -19,7 +19,12 @@ function addUserName() {
 }
 
 function addTweet() {
-  prevTweet.innerHTML = enterTweet.value.trim(); // TODO: contain this inside div
+  // if (enterTweet.value.length % 65 === 0) {
+  //   enterTweet.innerHTML = ' <br /> ';
+  // }
+  if (enterTweet.value.length < 200) {
+    prevTweet.innerHTML = enterTweet.value.trim(); 
+  }
 }
 
 // event listeners to change prev
@@ -67,7 +72,7 @@ function addQuotes() {
 }
 
 function addLikes() {
-  prevLikes.innerHTML = enterLikes.value;
+  prevLikes.innerHTML = enterLikes.value.trim();
 
 }
 
