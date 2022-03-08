@@ -91,11 +91,18 @@ const verifiedButton = document.querySelector('.verified');
 const uploadPfpButton = document.querySelector('.upload');
 const removePfpButton = document.querySelector('.remove');
 
+const verifiedBadge = document.querySelector('.verified-badge');
 const uploadPfpInput = document.querySelector('#pfp-id');
 const prevPfp = document.querySelector('.pfp-image');
 
 function addVerifiedLogo() {
+// could use ternary?? This makes it more simple imo
+  if (verifiedBadge.style.visibility === 'visible') {
+    verifiedBadge.style.visibility = 'hidden';
 
+  } else {
+    verifiedBadge.style.visibility = 'visible';
+  }
 }
 
 function uploadPfp() {
