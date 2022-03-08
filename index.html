@@ -87,11 +87,20 @@
           <input class="enter-time" type="time" name="time" id="time">
         </div>
         
-        <div class="form-floating">
-          <textarea class="form-control enter-userdevice" placeholder="Leave a comment here" id="floatingTextarea2"
-          style="height: 60px; width: 35rem; resize: none;"></textarea>
-          <label for="floatingTextarea2">User Device</label>
-        </div>
+        
+          <div class="form-floating">
+            <select class="form-select enter-userdevice" id="floatingSelect" aria-label="Floating label select example" style = "height: 60px; width: 35rem; resize: none;">
+              
+              <option value="Twitter for Android"> Twitter for Android </option>
+              <option value="Twitter for IOS"> Twitter for iPhone </option>
+              <option value="Desktop"> Twitter for Web </option>
+              <option value=""> Other </option>
+            
+            </select>
+            <label for="floatingSelect"> User Device </label>
+          </div>
+
+  
         
         <div class="stats-count">
 
@@ -174,7 +183,7 @@
             
             <strong> &#183; </strong>
             
-            <a href=""> <i class="userdevice"> Twitter for Android </i> </a> <!-- TODO: add options to user Device -->
+            <a href="" class="userdevice-link"> <i class="userdevice"> Twitter for Android </i> </a> <!-- TODO: add options to user Device -->
             
             
           </div>

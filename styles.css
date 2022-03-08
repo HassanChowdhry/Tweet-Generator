@@ -128,17 +128,24 @@ h1 {
 
 }
 
-.tweet-details i {
-  margin: 0 0.3rem;
-}
-
 /* bottom part */
 
 .bottom-container {
   padding: 5rem;
-
+  
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.tweet-details i {
+  margin: 0 0.3rem;
+}
+
+.userdevice-link {
+  text-decoration: none;
+}
+.userdevice-link :hover{
+  text-decoration: underline;
 }
 
 .tweet-popularity {
