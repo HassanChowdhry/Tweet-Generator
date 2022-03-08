@@ -90,7 +90,8 @@ h1 {
 
 .pfp img {
   border-radius: 100%;
-  width: 30%;
+  width: 6rem;
+  height: 6rem;
   margin-right: 1rem;
 
 }
@@ -110,17 +111,22 @@ h1 {
 .tweet {
   font-size: x-large;
 }
+
 .message {
   word-break: break-word;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: auto; /* fallback */
-   max-height: auto; /* fallback */
-   -webkit-line-clamp: auto; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: auto;
+  /* fallback */
+  max-height: auto;
+  /* fallback */
+  -webkit-line-clamp: auto;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 
 }
+
 .tweet-details i {
   margin: 0 0.3rem;
 }

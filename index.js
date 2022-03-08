@@ -83,3 +83,36 @@ enterUserDevice.addEventListener('input', addUserDevice);
 enterRetweets.addEventListener('input', addRetweets);
 enterQuotes.addEventListener('input', addQuotes);
 enterLikes.addEventListener('input', addLikes);
+
+// Button logic 
+
+// calling them
+const verifiedButton = document.querySelector('.verified');
+const uploadPfpButton = document.querySelector('.upload');
+const removePfpButton = document.querySelector('.remove');
+
+const uploadPfpInput = document.querySelector('#pfp-id');
+const prevPfp = document.querySelector('.pfp-image');
+
+function addVerifiedLogo() {
+
+}
+
+function uploadPfp() {
+  uploadPfpInput.click();
+  
+  uploadPfpInput.onchange = () => {
+    const [file] = uploadPfpInput.files;
+    if (file) {
+      prevPfp.src = URL.createObjectURL(file);
+    }
+  };
+}
+
+function removePfp() {
+  prevPfp.src = 'GeneratorFigma/avatar.jpg';
+}
+
+verifiedButton.addEventListener('click', addVerifiedLogo);
+uploadPfpButton.addEventListener('click', uploadPfp);
+removePfpButton.addEventListener('click', removePfp);
