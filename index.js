@@ -60,7 +60,7 @@ function addDate() {
 }
 
 function addUserDevice() {
-  prevUserDevice.innerHTML = enterUserDevice.value.trim(); // TODO: add options to this
+  prevUserDevice.innerHTML = enterUserDevice.value.trim();
 }
 
 function addRetweets() {

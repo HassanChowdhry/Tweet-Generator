@@ -5,34 +5,41 @@ h1 {
 /* Two Sub Sections */
 .tweet-grid {
   background-color: lightblue;
-  /* change later*/
+
+  box-shadow:
+    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+    8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+    17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+    36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 5rem;
-  padding: 2rem;
+  margin: 7rem;
+  padding: 3rem;
+  grid-column-gap: 3rem;
 }
 
 /* 1st half section */
 .tweet-info {
   display: grid;
   grid-template-columns: 1fr;
-}
-
-.form-floating {
-  margin: 2rem 0;
+  border-right: 1px solid #000;
+  grid-row-gap: 2rem;
 }
 
 /* Other Part of Half Section */
 .tweet-stats {
   display: grid;
   grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+
 }
 
 .stats-count {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 
 
 /* From cssbuttons.io */
@@ -66,44 +73,53 @@ h1 {
 /* Preview */
 
 .preview-grid {
-  margin: 5rem;
-  padding: 5rem;
+  margin: 10rem 15rem;
+  padding: 3rem 10rem;
   background-color: lightblue;
+  box-shadow:
+    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+    8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+    17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+    36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .prev-container {
-  padding: 5rem;
+  height: 500px;
+  width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
+  grid-row-gap: 2rem;
 }
 
 .top-container {
-  padding: 5rem;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
-.pfp {
+.pfp-image {
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+  float: left;
+}
+
+
+.dots {
   text-align: right;
 }
 
-.pfp img {
-  border-radius: 100%;
-  width: 6rem;
-  height: 6rem;
-  margin-right: 1rem;
-
-}
-
 .dots img {
-  width: 5%;
+  width: 3%;
   transform: rotate(90deg);
 }
 
 /* middle part */
 .middle-container {
-  padding: 5rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr;
@@ -131,8 +147,6 @@ h1 {
 /* bottom part */
 
 .bottom-container {
-  padding: 5rem;
-  
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -144,18 +158,26 @@ h1 {
 .userdevice-link {
   text-decoration: none;
 }
-.userdevice-link :hover{
+
+.userdevice-link :hover {
   text-decoration: underline;
 }
 
 .tweet-popularity {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  font-size: large;
+}
+
+.tweet-popularity i {
+  margin-right: 2rem;
 }
 
 .tweet-interact {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tweet-interact div {
+  text-align: center;
 }
 
 .tweet-interact div img {
