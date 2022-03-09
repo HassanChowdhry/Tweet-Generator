@@ -98,7 +98,7 @@ h1 {
 
 .dots img {
   width: 5%;
-  
+  transform: rotate(90deg);
 }
 
 /* middle part */
