@@ -114,10 +114,17 @@ const prevPfp = document.querySelector('.pfp-image');
 function addVerifiedLogo() {
 // could use ternary?? This makes it more simple imo
   if (verifiedBadge.style.visibility === 'visible') {
+    verifiedButton.style.background = '#fff';
+    verifiedButton.style.color = '#000';
+    
     verifiedBadge.style.visibility = 'hidden';
 
   } else {
+    verifiedButton.style.background = '#000';
+    verifiedButton.style.color = '#fff';
+
     verifiedBadge.style.visibility = 'visible';
+
   }
 }
 

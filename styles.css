@@ -4,7 +4,7 @@ h1 {
 
 /* Two Sub Sections */
 .tweet-grid {
-  background-color: lightblue;
+  background-color: #add8e6;
 
   box-shadow:
     3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
@@ -21,6 +21,7 @@ h1 {
 }
 
 /* 1st half section */
+
 .tweet-info {
   display: grid;
   grid-template-columns: 1fr;
@@ -70,6 +71,10 @@ h1 {
   transform: translateY(-1px);
 }
 
+.remove {
+  background-color: #000;
+  color: white;
+}
 /* Preview */
 
 .preview-grid {
