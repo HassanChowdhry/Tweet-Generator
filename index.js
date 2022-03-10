@@ -41,6 +41,9 @@ const enterUserDevice = document.querySelector('.enter-userdevice');
 const enterRetweets = document.querySelector('.enter-retweets');
 const enterQuotes = document.querySelector('.enter-quotes');
 const enterLikes = document.querySelector('.enter-likes');
+const enterOtherUserDevice = document.querySelector('.enter-other-userdevice');
+
+const otherUserDeviceDiv = document.querySelector('.other-userdevice');
 
 // adding variables for preview part
 const prevTime = document.querySelector('.time');
@@ -60,7 +63,20 @@ function addDate() {
 }
 
 function addUserDevice() {
-  prevUserDevice.innerHTML = enterUserDevice.value.trim();
+  if (enterUserDevice.value !== 'Other') {
+    otherUserDeviceDiv.style.visibility = 'hidden';
+    otherUserDeviceDiv.style.position = 'absolute';
+    prevUserDevice.innerHTML = enterUserDevice.value.trim();
+  
+  } else {
+    otherUserDeviceDiv.style.visibility = 'visible';
+    otherUserDeviceDiv.style.position = 'relative';
+
+    enterOtherUserDevice.addEventListener('input', () => {
+      prevUserDevice.innerHTML = enterOtherUserDevice.value.trim();
+    });
+
+  }
 }
 
 function addRetweets() {
