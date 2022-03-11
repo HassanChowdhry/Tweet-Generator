@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -72,7 +73,6 @@
           <h3> Tweet Stats </h3>
         </div>
 
-      <!-- TODO: change Date and Time because of format -->
         <div>
           <label for="date"> Date: </label> 
           <br>
@@ -154,11 +154,11 @@
             <strong class="name"> name </strong>
 
             <img class="verified-badge" src="GeneratorFigma/twitter-verified-badge.svg" alt="Verified-badge"
-              style="width: 3%; visibility: hidden;">
+              style="width: 5%; visibility: hidden;">
 
             <br>
 
-            <i class="username"> @username </i>
+            <span class="username"> @username </span>
           </div>
 
           <div class="dots">
@@ -170,11 +170,8 @@
         <!-- middle part -->
 
         <div class="middle-container">
-
-          <div class="tweet">
-            <strong class="message"> Create a fake tweet to fool your friends!!! </strong>
-          </div>
-
+         
+            <p class="message"> Create a fake tweet to fool your friends!!! </p>
 
         </div>
 
@@ -182,15 +179,15 @@
 
           <div class="tweet-details">
 
-            <i class="time"> 2:30 AM </i>
+            <span class="time"> 2:30 am </span>
 
             <strong> &#183; </strong>
 
-            <i class="date"> August 12, 2022</i>
+            <span class="date"> 12 Mar 2022</span>
 
             <strong> &#183; </strong>
 
-            <a href="" class="userdevice-link"> <i class="userdevice"> Twitter for Android </i> </a>
+            <a href="" class="userdevice-link"> <span class="userdevice"> Twitter for Android </span> </a>
 
 
           </div>
@@ -199,11 +196,11 @@
 
           <div class="tweet-popularity">
 
-            <strong class="retweets"> 20 </strong> <i> Retweets </i>
+            <strong class="retweets"> 20 </strong> <span> Retweets </span>
 
-            <strong class="quotes"> 40 </strong> <i> Quotes Tweets </i>
+            <strong class="quotes"> 40 </strong> <span> Quotes Tweets </span>
 
-            <strong class="likes"> 2300 </strong> <i> Likes </i>
+            <strong class="likes"> 2300 </strong> <span> Likes </span>
 
           </div>
 
@@ -228,7 +225,6 @@
 
   <!-- Tweet Generator -->
   <section id="tweet-generator">
-
   </section>
 
   <script src="index.js"></script>
@@ -236,4 +232,4 @@
 
 </html>
 
-<!-- TODO: figure out final color scheme and put shadow for border to make it look cool -->
+<!-- TODO: figure out final color scheme  -->

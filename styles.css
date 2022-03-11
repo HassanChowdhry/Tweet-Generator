@@ -75,6 +75,12 @@ h1 {
   background-color: #000;
   color: white;
 }
+
+.remove:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 /* Preview */
 
 .preview-grid {
@@ -97,7 +103,6 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
-  grid-row-gap: 2rem;
 }
 
 .top-container {
@@ -113,26 +118,30 @@ h1 {
   float: left;
 }
 
+.name {
+  font-size: large;
+  line-height: 30px;
+}
+
+.username {
+  font-size: large;
+}
 
 .dots {
   text-align: right;
 }
 
 .dots img {
-  width: 3%;
+  width: 5%;
   transform: rotate(90deg);
 }
 
 /* middle part */
 .middle-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr;
+  font-size: x-large;
+  font-weight: 400;
 }
 
-.tweet {
-  font-size: x-large;
-}
 
 .message {
   word-break: break-word;
@@ -156,7 +165,7 @@ h1 {
   grid-template-columns: 1fr;
 }
 
-.tweet-details i {
+.tweet-details span {
   margin: 0 0.3rem;
 }
 
@@ -172,7 +181,7 @@ h1 {
   font-size: large;
 }
 
-.tweet-popularity i {
+.tweet-popularity span {
   margin-right: 2rem;
 }
 
