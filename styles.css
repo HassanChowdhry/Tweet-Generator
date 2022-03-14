@@ -43,7 +43,7 @@ h1 {
 }
 
 
-/* From cssbuttons.io */
+/* From css buttons.io */
 .btn {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -181,8 +181,24 @@ h1 {
   font-size: large;
 }
 
-.tweet-popularity span {
-  margin-right: 2rem;
+.tweet-popularity div {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.retweet-div {
+  visibility: visible;
+  position: relative;
+}
+
+.quotes-div {
+  visibility: visible;
+  position: relative;
+}
+
+.likes-div {
+  visibility: visible;
+  position: relative;
 }
 
 .tweet-interact {
