@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
@@ -21,195 +22,193 @@
   </script>
 
 
-<title>Tweet Generator</title>
+  <title>Tweet Generator</title>
 
 </head>
 
 <body>
-  
+
   <h1> Custom Tweet Generator </h1>
-  
+
   <section id="tweet">
     <div class="tweet-grid">
-      
+
       <!-- TWO SUB-SECTIONS  -->
       <div class="tweet-info">
         <div>
           <h3> Tweet User Details </h3>
         </div>
-        
+
         <div>
-          <!-- TODO: add the logic -->
-          <button class="btn verified">  Verified </button>
+          <button class="btn verified"> Verified </button>
         </div>
-        
+
         <div class="form-floating">
           <textarea class="form-control enter-name" placeholder="Leave a comment here" id="floatingTextarea2"
-          style="height: 60px; width: 35rem; resize: none;"></textarea>
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
           <label for="floatingTextarea2">Name</label>
         </div>
-        
+
         <div class="form-floating">
           <textarea class="form-control enter-username" placeholder="Leave a comment here" id="floatingTextarea2"
-          style="height: 60px; width: 35rem; resize: none;"></textarea>
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
           <label for="floatingTextarea2">Username</label>
         </div>
-        
+
         <div class="form-floating">
           <textarea class="form-control enter-tweet" placeholder="Leave a comment here" id="floatingTextarea2"
             style="height: 100px; width: 35rem;"></textarea>
           <label for="floatingTextarea2">Tweet</label>
         </div>
-        
+
         <div>
-          <!-- TODO: add da logic -->
-          <button class="btn upload"> <input id='pfp-id' type='file' hidden/> Upload pfp </button>
+          <button class="btn upload"> <input id='pfp-id' type='file' hidden /> Upload pfp </button>
           <button class="btn remove"> remove pfp </button>
         </div>
-        
+
       </div>
       <!-- HALF OF SECTIONS  -->
       <div class="tweet-stats">
         <div>
           <h3> Tweet Stats </h3>
         </div>
-        
-        
+
         <div>
           <label for="date"> Date: </label>
           <br>
           <input class="enter-date" type="date" name="date" id="date">
         </div>
-        
+
         <div>
           <label for="time"> Time: </label>
           <br>
           <input class="enter-time" type="time" name="time" id="time">
         </div>
-        
-        
-          <div class="form-floating">
-            <select class="form-select enter-userdevice" id="floatingSelect" aria-label="Floating label select example" style = "height: 60px; width: 35rem; resize: none;">
-              
-              <option selected> Twitter for Android </option>
-              <option value="Twitter for iPhone"> Twitter for iPhone </option>
-              <option value="Twitter for Web"> Twitter for Web </option>
-              <option value=""> Other </option>
-            
-            </select>
-            <label for="floatingSelect"> User Device </label>
-          </div>
 
-  
-        
+
+        <div class="form-floating">
+          <select class="form-select enter-userdevice" id="floatingSelect" aria-label="Floating label select example"
+            style="height: 60px; width: 35rem; resize: none;">
+
+            <option selected> Twitter for Android </option>
+            <option value="Twitter for iPhone"> Twitter for iPhone </option>
+            <option value="Twitter Web App"> Twitter Web App </option>
+            <option value="TweetDeck"> TweetDeck </option>
+            <option value="Other"> Other </option>
+
+          </select>
+          <label for="floatingSelect"> User Device </label>
+
+        </div>
+
+        <div class="form-floating other-userdevice" style="position:absolute; visibility:hidden;">
+
+          <textarea class="form-control enter-other-userdevice" placeholder="Leave a comment here"
+            id="floatingTextarea2" style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2"> User Device </label>
+
+        </div>
+
+
         <div class="stats-count">
 
           <div class="form-floating">
             <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 60px; width: 17rem; resize: none;"></textarea>
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Retweets </label>
           </div>
-          
+
           <div class="form-floating">
             <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Quotes </label>
           </div>
 
-          <div class="form-floating">
-            <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
+        </div>
+
+        <div class="form-floating likes-box">
+          <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
             style="height: 60px; width: 17rem; resize: none;"></textarea>
-            <label for="floatingTextarea2"> Likes </label>
-          </div>
-          
+          <label for="floatingTextarea2"> Likes </label>
         </div>
         <!-- END OF SUB-SECTIONS -->
       </div>
 
     </div>
   </section>
-  
+
   <!-- PREVIEW -->
   <section id="preview">
     <div class="preview-grid">
       <h3> Preview </h3>
-      
+
       <div class="prev-container">
-        
+
         <!-- top part -->
-        
+
         <div class="top-container">
-          
-          <div class="pfp">
-            <img class = 'pfp-image' src="GeneratorFigma/avatar.jpg" alt="profile-pic">
-          </div>
 
           <div class="user-identity">
+            <img class='pfp-image' src="GeneratorFigma/avatar.jpg" alt="profile-pic">
+
             <strong class="name"> name </strong>
-            
-            <img class="verified-badge" src="GeneratorFigma/twitter-verified-badge.svg" alt="Verified-badge" style = "width: 4%; visibility: hidden;">
+
+            <img class="verified-badge" src="GeneratorFigma/twitter-verified-badge.svg" alt="Verified-badge"
+              style="width: 5%; visibility: hidden;">
 
             <br>
-            
-            <i class="username"> @username </i>
+
+            <span class="username"> @username </span>
           </div>
 
           <div class="dots">
             <img src="GeneratorFigma/more.png" alt="three-dots">
           </div>
-          
+
         </div>
-        
+
         <!-- middle part -->
-        
+
         <div class="middle-container">
 
-          <div class="tweet">
-            <strong class="message"> Create a fake tweet to fool your friends!!! </strong>
-          </div>
-          
-          
+          <p class="message"> Create a fake tweet to fool your friends!!! </p>
+
         </div>
 
         <div class="bottom-container">
-          
+
           <div class="tweet-details">
 
-            <i class="time"> 2:30 AM </i>
+            <span class="time"> 2:30 am </span>
 
             <strong> &#183; </strong>
-            
-            <i class="date"> August 12, 2022</i>
-            
+
+            <span class="date"> 12 Mar 22</span>
+
             <strong> &#183; </strong>
-            
-            <a href="" class="userdevice-link"> <i class="userdevice"> Twitter for Android </i> </a> <!-- TODO: add options to user Device -->
-            
-            
+
+            <a href="https://help.twitter.com/en/using-twitter/how-to-tweet#source-labels" target="blank" class="userdevice-link"> <span class="userdevice"> Twitter for Android </span> </a>
+
+
           </div>
-          
+
           <hr>
-          
+
           <div class="tweet-popularity">
 
-            <div>
-              <strong class="retweets"> 20 </strong> <i> retweets </i>
-            </div>
-            
-            <div>
-              <strong class="quotes"> 40 </strong> <i> quotes </i>
+            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span > Retweets </span>
             </div>
 
-            <div>
-              <strong class="likes"> 2300 </strong> <i> likes </i>
+            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span > Quotes Tweets
+              </span> </div>
+
+            <div  class="likes-div"> <strong class="likes"> 2300 </strong> <span> Likes </span>
             </div>
 
-            
-            
           </div>
 
           <hr>
-          
+
           <div class="tweet-interact">
             <div> <img src="GeneratorFigma/Twitter_Reply.png" alt="Twitter_Reply"> </div>
             <div> <img src="GeneratorFigma/repost.png" alt=""> </div>
@@ -219,18 +218,16 @@
 
         </div>
 
-        
+
       </div>
-      
+
     </div>
 
   </section>
 
-  <input id="flatpickr">
-  
+
   <!-- Tweet Generator -->
   <section id="tweet-generator">
-
   </section>
 
   <script src="index.js"></script>
@@ -238,4 +235,6 @@
 
 </html>
 
-<!-- TODO: fix how preview looks and date format -->
+<!-- TODO: find out how to screen shot the tweet -->
+<!-- TODO: make media query -->
+<!-- TODO: figure out final color scheme  -->
