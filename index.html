@@ -20,7 +20,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 
   <title>Tweet Generator</title>
 
@@ -142,7 +147,7 @@
     <div class="preview-grid">
       <h3> Preview </h3>
 
-      <div class="prev-container">
+      <div id="widget" class="prev-container">
 
         <!-- top part -->
 
@@ -187,7 +192,8 @@
 
             <strong> &#183; </strong>
 
-            <a href="https://help.twitter.com/en/using-twitter/how-to-tweet#source-labels" target="blank" class="userdevice-link"> <span class="userdevice"> Twitter for Android </span> </a>
+            <a href="https://help.twitter.com/en/using-twitter/how-to-tweet#source-labels" target="blank"
+              class="userdevice-link"> <span class="userdevice"> Twitter for Android </span> </a>
 
 
           </div>
@@ -196,13 +202,13 @@
 
           <div class="tweet-popularity">
 
-            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span > Retweets </span>
+            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span> Retweets </span>
             </div>
 
-            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span > Quotes Tweets
+            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span> Quotes Tweets
               </span> </div>
 
-            <div  class="likes-div"> <strong class="likes"> 2300 </strong> <span> Likes </span>
+            <div class="likes-div"> <strong class="likes"> 2300 </strong> <span> Likes </span>
             </div>
 
           </div>
@@ -221,6 +227,7 @@
 
       </div>
 
+      <button class="btn" onclick="save()" id="btnSave"> Download </button>
     </div>
 
   </section>
@@ -235,6 +242,5 @@
 
 </html>
 
-<!-- TODO: find out how to screen shot the tweet -->
 <!-- TODO: make media query -->
 <!-- TODO: figure out final color scheme  -->

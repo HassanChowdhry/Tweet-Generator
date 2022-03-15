@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //! logic for first half of tweet
 
 // adding class variables
@@ -244,3 +245,25 @@ function removePfp() {
 verifiedButton.addEventListener('click', addVerifiedLogo);
 uploadPfpButton.addEventListener('click', uploadPfp);
 removePfpButton.addEventListener('click', removePfp);
+
+// ? fix tainted promises issue
+// function save() {
+//   alert('hello');
+//   html2canvas(document.querySelector('#widget')).then((canvas) => {
+//     // Export canvas as a blob 
+//     canvas.toBlob((blob) => {
+//       // Generate file download
+//       window.saveAs(blob, 'yourwebsite_screenshot.png');
+//     });
+//   });
+// }
+
+// function save() {
+//   html2canvas(document.querySelector('#widget')).then((canvas) => {
+//     // Export the canvas to its data URI representation
+//     let base64image = canvas.toDataURL('image/png');
+
+//     // Open the image in a new window
+//     window.open(base64image, '_blank');
+//   });
+// }
