@@ -267,3 +267,14 @@ removePfpButton.addEventListener('click', removePfp);
 //     window.open(base64image, '_blank');
 //   });
 // }
+
+function save() {
+  let div = document.getElementById('widget');
+  html2canvas(div).then(
+    (canvas) => {
+      document
+        .getElementById('output')
+        .appendChild(canvas);
+    },
+  );
+}
