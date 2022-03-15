@@ -5,7 +5,7 @@ h1 {
 
 /* Two Sub Sections */
 .tweet-grid {
-  background-color: #FFF5F5;
+  background-color: lightblue;  /* change later*/
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 5rem;
@@ -16,6 +16,9 @@ h1 {
 .tweet-info {
   display: grid;
   grid-template-columns: 1fr;
+}
+.form-floating {
+  margin: 2rem 0;
 }
 
 /* Other Part of Half Section */
@@ -57,4 +60,75 @@ h1 {
 
 .btn:active {
   transform: translateY(-1px);
+}
+
+/* Preview */
+
+.preview-grid {
+  margin: 5rem;
+  padding: 5rem;
+  background-color: lightblue;
+}
+
+.prev-container {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+}
+.top-container {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.pfp {
+  text-align: right;
+}
+.pfp img{
+  border-radius: 100%;
+  width: 30%;
+  margin-right: 1rem;
+
+}
+.dots img {
+  width: 5%;
+}
+
+           /* middle part */
+.middle-container {
+  padding: 5rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr;
+}
+
+.tweet {
+  font-size:x-large;
+}
+
+.tweet-details i {
+  margin: 0 0.7rem;
+}
+
+            /* bottom part */
+
+.bottom-container {
+  padding: 5rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.tweet-popularity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.tweet-interact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tweet-interact div img {
+  width: 15%;
 }

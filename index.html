@@ -37,25 +37,27 @@
           <h3> Tweet User Details </h3>
         </div>
 
-
-        <div style="margin-top: 2rem;">
-          <label for="name">Name:</label>
-          <button class="btn verified"> Verified </button>
-          <br>
-          <textarea name="name" id="name" cols="35" rows="1" style="resize: none;"></textarea>
+        <div>
+          <button class="btn verified test"> Verified </button>
         </div>
 
-        <div>
-          <label for="username">Username:</label>
-          <br>
-          <textarea name="username" id="username" cols="35" rows="1" style="resize: none;"></textarea>
+        <div class="form-floating">
+          <textarea class="form-control enter-name" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">Name</label>
         </div>
 
-        <div>
-          <label for="tweet-message">Tweet:</label>
-          <button class="btn"> Upload Images </button>
-          <br>
-          <textarea name="tweet-message" id="tweet-message" cols="35" rows="3"></textarea>
+        <div class="form-floating">
+          <textarea class="form-control enter-username" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">Username</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea class="form-control enter-tweet" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 100px; width: 35rem;"></textarea>
+          <label for="floatingTextarea2">Tweet</label>
+
         </div>
 
         <div>
@@ -72,42 +74,44 @@
 
 
         <div>
-          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="date"> Date: </label>
           <br>
-          <input type="date" name="date" id="date">
+          <input class="enter-date" type="date" name="date" id="date">
         </div>
 
         <div>
-          <!-- for now just make skeletons and desgin figure out the inout later -->
+          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="time"> Time: </label>
           <br>
-          <input type="time" name="time" id="time">
+          <input class="enter-time" type="time" name="time" id="time">
         </div>
 
-        <div>
-          <label for="twitter-client"> User Device </label>
-          <br>
-          <textarea name="twitter-client" id="twitter-client" cols="35" rows="1" style="resize: none;"></textarea>
+        <div class="form-floating">
+          <textarea class="form-control enter-userdevice" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 60px; width: 35rem; resize: none;"></textarea>
+          <label for="floatingTextarea2">User Device</label>
         </div>
 
         <div class="stats-count">
-          <div>
-            <label for="retweets"> Retweets </label>
-            <br>
-            <input type="text" name="retweets" id="retweets">
+
+          <div class="form-floating">
+            <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Retweets </label>
           </div>
 
-          <div>
-            <label for="quotes"> Quotes </label>
-            <br>
-            <input type="text" name="quotes" id="quotes">
+          <div class="form-floating">
+            <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Quotes </label>
           </div>
 
-          <div>
-            <label for="likes"> Likes </label>
-            <br>
-            <input type="text" name="likes" id="likes">
+          <div class="form-floating">
+            <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Likes </label>
+
           </div>
 
         </div>
@@ -119,6 +123,91 @@
 
   <!-- PREVIEW -->
   <section id="preview">
+    <div class="preview-grid">
+      <h3> Preview </h3>
+
+      <div class="prev-container">
+
+        <!-- top part -->
+
+        <div class="top-container">
+
+          <div class="pfp">
+            <img src="GeneratorFigma/avatar.jpg" alt="avatar">
+          </div>
+
+          <div class="user-identity">
+            <strong class="name">name</strong>
+
+            <br>
+
+            <i class="username"> @username </i>
+          </div>
+
+          <div class="dots">
+            <img src="GeneratorFigma/more.png" alt="three-dots">
+          </div>
+
+        </div>
+
+        <!-- middle part -->
+
+        <div class="middle-container">
+
+          <div class="tweet">
+            <!-- TODO: Contain this inside div -->
+            <strong class="message"> Create a fake tweet to fool your freinds!!! </strong> 
+          </div>
+
+
+        </div>
+
+        <div class="bottom-container">
+
+          <div class="tweet-details">
+
+            <i class="time"> 2:30 AM </i>
+            <i class="date"> August 12, 2022</i>
+            <i class="userdevice"> Twitter for Android </i>  <!-- TODO: add options to user Device -->
+
+
+          </div>
+
+          <hr>
+
+          <div class="tweet-popularity">
+
+            <div>
+              <strong class="retweets"> 20 </strong> <i> retweets </i>
+            </div>
+
+            <div>
+              <strong class="quotes"> 40 </strong> <i> quotes </i>
+            </div>
+            
+            <div>
+              <strong class="likes"> 2300 </strong> <i> likes </i>
+            </div>
+
+            
+
+          </div>
+
+          <hr>
+
+          <div class="tweet-interact">
+            <div> <img src="GeneratorFigma/Twitter_Reply.png" alt="Twitter_Reply"> </div>
+            <div> <img src="GeneratorFigma/repost.png" alt=""> </div>
+            <div> <img src="GeneratorFigma/love.png" alt=""> </div>
+            <div> <img src="GeneratorFigma/upload.png" alt=""> </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
 
   </section>
 
@@ -131,3 +220,5 @@
 </body>
 
 </html>
+
+<!-- TODO: fix how preview looks and date format -->
