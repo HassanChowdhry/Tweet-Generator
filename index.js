@@ -30,7 +30,6 @@ enterUserName.addEventListener('input', addUserName);
 enterTweet.addEventListener('input', addTweet);
 
 //! second half of tweet
-// ? Testing 
 
 // adding variables for entering details part
 const enterTime = document.querySelector('.enter-time');
