@@ -1,9 +1,24 @@
-h1 {
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h1{
   text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+hr{
+  margin: 0.5rem 0;    
 }
 
 /* Two Sub Sections */
 .tweet-grid {
+  /*! margin: 7rem; padding: 3rem; laptop screens*/
+
   background-color: #add8e6;
 
   box-shadow:
@@ -84,6 +99,7 @@ h1 {
 /* Preview */
 
 .preview-grid {
+  /*! margin: 10rem 15rem; padding: 3rem 10rem; laptop screens */
   margin: 10rem 15rem;
   padding: 3rem 10rem;
   background-color: lightblue;
@@ -103,6 +119,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
+  height: fit-content;
 }
 
 .top-container {
@@ -165,9 +182,9 @@ h1 {
   grid-template-columns: 1fr;
 }
 
-.tweet-details {
+/* .tweet-details {
   border-bottom: 1px solid black;
-}
+} */
 .tweet-details span {
   margin: 0 0.3rem;
 }
@@ -182,7 +199,7 @@ h1 {
 
 .tweet-popularity {
   font-size: large;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 }
 
 .tweet-popularity div {
