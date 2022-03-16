@@ -3,15 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,500&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,500&family=Roboto&family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -24,9 +23,6 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <title>Tweet Generator</title>
 
@@ -67,7 +63,7 @@
           <label for="floatingTextarea2">Tweet</label>
         </div>
 
-        <div>
+        <div class="upload-button">
           <button class="btn upload"> <input id='pfp-id' type='file' hidden /> Upload pfp </button>
           <button class="btn remove"> remove pfp </button>
         </div>
@@ -144,9 +140,10 @@
   </section>
 
   <!-- PREVIEW -->
-  <section id="preview">
-    <div class="preview-grid">
-      <h2 style="text-align: center;"> Preview </h2>
+  <section id="preview-section">
+    <div class="preview">
+     
+      <h2> Preview </h2>
 
       <div id="widget" class="prev-container">
 
@@ -228,7 +225,7 @@
 
       </div>
 
-      <div style="display: flex; justify-items:center; margin-bottom: 1rem;">
+      <div style="margin-bottom: 1rem;">
         <button class="btn" style="margin: auto;" onclick="save()" id="btnSave"> Download </button>
       </div>
 
@@ -251,5 +248,4 @@
 </html>
 
 <!-- TODO: make invalid statements -->
-<!-- TODO: make media query -->
 <!-- TODO: figure out final color scheme  -->

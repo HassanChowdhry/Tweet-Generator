@@ -155,7 +155,7 @@ function addUserDevice() {
 }
 
 function addRetweets() {
-  if (enterRetweets.value.trim() === '0') {
+  if (enterRetweets.value.slice(0, 1) === '0') {
     retweetsDiv.style.visibility = 'hidden';
     retweetsDiv.style.position = 'absolute';
 
@@ -167,7 +167,7 @@ function addRetweets() {
 }
 
 function addQuotes() {
-  if (enterQuotes.value.trim() === '0') {
+  if (enterQuotes.value.slice(0, 1) === '0') {
     quotesDiv.style.visibility = 'hidden';
     quotesDiv.style.position = 'absolute';
 
@@ -179,7 +179,7 @@ function addQuotes() {
 }
 
 function addLikes() {
-  if (enterLikes.value.trim() === '0') {
+  if (enterLikes.value.slice(0, 1) === '0') {
     likesDiv.style.visibility = 'hidden';
     likesDiv.style.position = 'absolute';
 

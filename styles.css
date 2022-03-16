@@ -31,7 +31,6 @@ hr{
   grid-template-columns: 1fr 1fr;
   margin: 5rem 15rem;
   padding: 3rem;
-  grid-column-gap: 3rem;
 
 }
 
@@ -42,6 +41,7 @@ hr{
   grid-template-columns: 1fr;
   border-right: 1px solid #000;
   grid-row-gap: 2rem;
+  justify-items: center;
 }
 
 /* Other Part of Half Section */
@@ -49,6 +49,7 @@ hr{
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 2rem;
+  justify-items: center;
 }
 
 .stats-count {
@@ -97,7 +98,7 @@ hr{
 
 /* Preview */
 
-.preview-grid {
+.preview {
   margin: 10rem 15rem;
   padding: 3rem 10rem;
   background-color: lightblue;
@@ -107,6 +108,9 @@ hr{
     17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
     36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
     100px 100px 80px rgba(0, 0, 0, 0.07);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .prev-container {
@@ -118,6 +122,7 @@ hr{
   grid-template-columns: 1fr;
   background-color: white;
   height: fit-content;
+
 }
 
 .top-container {
@@ -180,9 +185,7 @@ hr{
   grid-template-columns: 1fr;
 }
 
-/* .tweet-details {
-  border-bottom: 1px solid black;
-} */
+
 .tweet-details span {
   margin: 0 0.3rem;
 }
@@ -197,27 +200,11 @@ hr{
 
 .tweet-popularity {
   font-size: large;
-  /* border-bottom: 1px solid black; */
 }
 
 .tweet-popularity div {
   margin-right: 1.5rem;
   display: inline-block;
-}
-
-.retweet-div {
-  visibility: visible;
-  position: relative;
-}
-
-.quotes-div {
-  visibility: visible;
-  position: relative;
-}
-
-.likes-div {
-  visibility: visible;
-  position: relative;
 }
 
 .tweet-interact {
@@ -240,25 +227,54 @@ hr{
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 1600px) {
-
+@media (max-width: 1920px) {
+  body{
+    background-color: aqua;
+  }
   .tweet-grid {
-    margin: 5rem auto;
-  padding: 3rem;
-  background-color: #000;
+     margin: 5rem 10rem;
   }
-
-  .preview-grid {
-    margin: 10rem 15rem;
-    padding: 3rem 10rem;
-  }
-
   #output {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 2rem;
+    justify-items: center;
+  }
+
+}
+
+@media (max-width: 1600px) {
+  body{
+    background-color:blanchedalmond ;
+  }
+  .tweet-grid {
+    display: grid;
+    grid-template-columns:1fr;
+    grid-row-gap: 2rem;
+  }
+
+  .tweet-info{
+    border-right:none ;
+    border-bottom: 1px solid black;
+
+  }
+  .upload-button {
+    margin-bottom: 2rem;
+  }
+  .preview {
+    margin: 5rem 3rem ;
   }
 }
-/* 
-@media (max-width: 1028px) {
-} */
+
+@media (max-width: 1200px) {
+   body{
+    background-color: chartreuse;
+  }
+  .tweet-grid {
+    margin: 5rem 4rem;
+  }
+  .preview {
+    padding: 2rem 0;
+    margin: 5rem 2rem;
+  }
+}
