@@ -11,6 +11,8 @@ const prevUserName = document.querySelector('.username');
 const prevTweet = document.querySelector('.message');
 
 // functions for event listeners to change preview
+
+// TODO: change it to add errors and cap number of words
 function addName() {
   prevName.innerHTML = enterName.value.trim();
 }
@@ -20,8 +22,8 @@ function addUserName() {
 }
 
 function addTweet() {
-  if (enterTweet.value.length < 200) {
-    prevTweet.innerHTML = enterTweet.value.trim();
+  if (enterTweet.value.length < 280) {
+    prevTweet.innerHTML = enterTweet.value;
   }
 }
 
