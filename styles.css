@@ -15,6 +15,12 @@ hr{
   margin: 0.5rem 0;    
 }
 
+/** all invalid inputs  */
+.text-danger {
+visibility: hidden;
+position: absolute;
+}
+
 /* Two Sub Sections */
 
 .tweet-grid {

@@ -11,8 +11,12 @@ const prevUserName = document.querySelector('.username');
 const prevTweet = document.querySelector('.message');
 
 const nameCharactersCount = document.querySelector('.name-characters');
-const usernameCharactersCount = document.querySelector('.username-characters');
+const userNameCharactersCount = document.querySelector('.username-characters');
 const tweetCharactersCount = document.querySelector('.tweet-characters');
+
+const nameInvalidText = document.querySelector('.invalid-name'); 
+const userNameInvalidText = document.querySelector('.invalid-username'); 
+const tweetInvalidText = document.querySelector('.invalid-tweet'); 
 
 // functions for event listeners to change preview
 
@@ -20,28 +24,60 @@ function addName() {
   if (enterName.value.length <= 25) {
     prevName.innerHTML = enterName.value.trim();
     nameCharactersCount.innerHTML = `${enterName.value.length}/25 characters`;
+    
+    if (enterName.classList.contains('is-invalid')) {
+      enterName.classList.remove('is-invalid');
+      nameInvalidText.style.visibility = 'hidden';
+      nameInvalidText.style.position = 'absolute';
+    }
+
+  } else {
+    enterName.classList.add('is-invalid');
+    nameInvalidText.style.visibility = 'visible';
+    nameInvalidText.style.position = 'relative';
   }
-  // ? add else
 
 }
 
 function addUserName() {
   if (enterUserName.value.length <= 25) {
     prevUserName.innerHTML = `@${enterUserName.value.trim()}`;
-    usernameCharactersCount.innerHTML = `${enterUserName.value.length}/25 characters`;
+    userNameCharactersCount.innerHTML = `${enterUserName.value.length}/25 characters`;
+   
+    if (enterUserName.classList.contains('is-invalid')) {
+      enterUserName.classList.remove('is-invalid');
+      userNameInvalidText.style.visibility = 'hidden';
+      userNameInvalidText.style.position = 'absolute';
+    }
+    
+  } else {
+    enterUserName.classList.add('is-invalid');
+    userNameInvalidText.style.visibility = 'visible';
+    userNameInvalidText.style.position = 'relative';
   }
-  // ? add else
 
 }
 
 function addTweet() {
-  if (enterTweet.value.length <= 280) {
+  let tweetLength = enterTweet.value.length;
+  
+  if (tweetLength <= 280) {
     prevTweet.innerHTML = enterTweet.value;
-    tweetCharactersCount.innerHTML = `${enterTweet.value.length}/280 characters`;
+    tweetCharactersCount.innerHTML = `${tweetLength}/280 characters`;
+    
+    if (enterTweet.classList.contains('is-invalid')) {
+      enterTweet.classList.remove('is-invalid');
+      tweetInvalidText.style.visibility = 'hidden';
+      tweetInvalidText.style.position = 'absolute';
+    }
+    
+  } else {
+    enterTweet.classList.add('is-invalid');
+    tweetInvalidText.style.visibility = 'visible';
+    tweetInvalidText.style.position = 'relative';
   }
+  
   // TODO: make it href for hashtag
-  // ? add else
-
 }
 
 // event listeners to change prev
@@ -60,7 +96,7 @@ const enterQuotes = document.querySelector('.enter-quotes');
 const enterLikes = document.querySelector('.enter-likes');
 const enterOtherUserDevice = document.querySelector('.enter-other-userdevice');
 
-const otherUserDeviceDiv = document.querySelector('.other-userdevice');
+const otherUserDeviceDiv = document.querySelector('.other-userdevice-div');
 const retweetsDiv = document.querySelector('.retweet-div');
 const quotesDiv = document.querySelector('.quotes-div');
 const likesDiv = document.querySelector('.likes-div');
@@ -73,7 +109,8 @@ const prevRetweets = document.querySelector('.retweets');
 const prevQuotes = document.querySelector('.quotes');
 const prevLikes = document.querySelector('.likes');
 
-const userdeviceCharactersCount = document.querySelector('.userdevice-characters');
+const userDeviceCharactersCount = document.querySelector('.userdevice-characters');
+const userDeviceInvalidText = document.querySelector('.invalid-userdevice');
 
 // functions for event listeners to change preview
 function addTime() {
@@ -171,9 +208,19 @@ function addUserDevice() {
     enterOtherUserDevice.addEventListener('input', () => {
       if (enterOtherUserDevice.value.length <= 50) {
         prevUserDevice.innerHTML = enterOtherUserDevice.value.trim();
-        userdeviceCharactersCount.innerHTML = `${enterOtherUserDevice.value.length}/50 characters`;
+        userDeviceCharactersCount.innerHTML = `${enterOtherUserDevice.value.length}/50 characters`;
+       
+        if (enterOtherUserDevice.classList.contains('is-invalid')) {
+          enterOtherUserDevice.classList.remove('is-invalid');
+          userDeviceInvalidText.style.visibility = 'hidden';
+          userDeviceInvalidText.style.position = 'absolute';
+        }
+        
+      } else {
+        enterOtherUserDevice.classList.add('is-invalid');
+        userDeviceInvalidText.style.visibility = 'visible';
+        userDeviceInvalidText.style.position = 'relative';
       }
-      // ? add else
     });
 
   }

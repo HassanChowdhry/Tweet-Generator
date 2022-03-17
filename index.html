@@ -48,19 +48,20 @@
         </div>
 
         <div>
-          <span class="invalid"> </span>
+          <span class="invalid-name text-danger"> No more than 25 characters! </span>
 
           <div class="form-floating">
             <textarea class="form-control enter-name" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 35rem; resize: none;"></textarea>
             <label for="floatingTextarea2">Name</label>
           </div>
+          
 
-          <span class="name-characters"> 0/30 characters </span>
+          <span class="name-characters"> 0/25 characters </span>
         </div>
 
         <div>
-          <span class="invalid"> </span>
+          <span class="invalid-username text-danger"> No more than 25 characters! </span>
 
           <div class="form-floating">
             <textarea class="form-control enter-username" placeholder="Leave a comment here" id="floatingTextarea2"
@@ -72,7 +73,7 @@
         </div>
 
         <div>
-          <span class="invalid"> </span>
+          <span class="invalid-tweet text-danger"> No more than 280 characters! </span>
 
           <div class="form-floating">
             <textarea class="form-control enter-tweet" placeholder="Leave a comment here" id="floatingTextarea2"
@@ -124,13 +125,20 @@
 
         </div>
 
-        <div class="form-floating other-userdevice" style="position:absolute; visibility:hidden;">
+        <div class="other-userdevice-div" style="position:absolute; visibility:hidden;">
+          <span class="invalid-userdevice text-danger"> No more than 50 characters! </span>
 
-          <textarea class="form-control enter-other-userdevice" placeholder="Leave a comment here"
-            id="floatingTextarea2" style="height: 60px; width: 35rem; resize: none;"></textarea>
-          <label for="floatingTextarea2"> User Device </label>
+          <div class="form-floating" >
+                
+            <textarea class="form-control enter-other-userdevice" placeholder="Leave a comment here"
+              id="floatingTextarea2" style="height: 60px; width: 35rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> User Device </label>
+            
+          </div>
           <span class="userdevice-characters"> 0/50 characters </span>
+
         </div>
+        
 
 
         <div class="stats-count">
@@ -266,6 +274,5 @@
 
 </html>
 
-<!-- TODO: make invalid statements -->
 <!-- TODO: figure out final color scheme  -->
 
