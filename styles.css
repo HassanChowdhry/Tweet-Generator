@@ -234,6 +234,7 @@ hr{
   .tweet-grid {
      margin: 5rem 10rem;
   }
+
   #output {
     display: grid;
     grid-template-columns: 1fr;

@@ -10,21 +10,38 @@ const prevName = document.querySelector('.name');
 const prevUserName = document.querySelector('.username');
 const prevTweet = document.querySelector('.message');
 
+const nameCharactersCount = document.querySelector('.name-characters');
+const usernameCharactersCount = document.querySelector('.username-characters');
+const tweetCharactersCount = document.querySelector('.tweet-characters');
+
 // functions for event listeners to change preview
 
-// TODO: change it to add errors and cap number of words
 function addName() {
-  prevName.innerHTML = enterName.value.trim();
+  if (enterName.value.length <= 25) {
+    prevName.innerHTML = enterName.value.trim();
+    nameCharactersCount.innerHTML = `${enterName.value.length}/25 characters`;
+  }
+  // ? add else
+
 }
 
 function addUserName() {
-  prevUserName.innerHTML = `@${enterUserName.value.trim()}`;
+  if (enterUserName.value.length <= 25) {
+    prevUserName.innerHTML = `@${enterUserName.value.trim()}`;
+    usernameCharactersCount.innerHTML = `${enterUserName.value.length}/25 characters`;
+  }
+  // ? add else
+
 }
 
 function addTweet() {
-  if (enterTweet.value.length < 280) {
+  if (enterTweet.value.length <= 280) {
     prevTweet.innerHTML = enterTweet.value;
+    tweetCharactersCount.innerHTML = `${enterTweet.value.length}/280 characters`;
   }
+  // TODO: make it href for hashtag
+  // ? add else
+
 }
 
 // event listeners to change prev
@@ -55,6 +72,8 @@ const prevUserDevice = document.querySelector('.userdevice');
 const prevRetweets = document.querySelector('.retweets');
 const prevQuotes = document.querySelector('.quotes');
 const prevLikes = document.querySelector('.likes');
+
+const userdeviceCharactersCount = document.querySelector('.userdevice-characters');
 
 // functions for event listeners to change preview
 function addTime() {
@@ -150,7 +169,11 @@ function addUserDevice() {
     otherUserDeviceDiv.style.position = 'relative';
 
     enterOtherUserDevice.addEventListener('input', () => {
-      prevUserDevice.innerHTML = enterOtherUserDevice.value.trim();
+      if (enterOtherUserDevice.value.length <= 50) {
+        prevUserDevice.innerHTML = enterOtherUserDevice.value.trim();
+        userdeviceCharactersCount.innerHTML = `${enterOtherUserDevice.value.length}/50 characters`;
+      }
+      // ? add else
     });
 
   }
@@ -248,6 +271,17 @@ verifiedButton.addEventListener('click', addVerifiedLogo);
 uploadPfpButton.addEventListener('click', uploadPfp);
 removePfpButton.addEventListener('click', removePfp);
 
+function save() {
+  let div = document.getElementById('widget');
+  html2canvas(div).then(
+    (canvas) => {
+      document
+        .getElementById('output')
+        .appendChild(canvas);
+    },
+  );
+}
+
 // ? fix tainted promises issue
 // function save() {
 //   alert('hello');
@@ -269,14 +303,3 @@ removePfpButton.addEventListener('click', removePfp);
 //     window.open(base64image, '_blank');
 //   });
 // }
-
-function save() {
-  let div = document.getElementById('widget');
-  html2canvas(div).then(
-    (canvas) => {
-      document
-        .getElementById('output')
-        .appendChild(canvas);
-    },
-  );
-}
