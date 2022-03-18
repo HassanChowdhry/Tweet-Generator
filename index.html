@@ -55,7 +55,7 @@
               style="height: 60px; width: 35rem; resize: none;"></textarea>
             <label for="floatingTextarea2">Name</label>
           </div>
-          
+
 
           <span class="name-characters"> 0/25 characters </span>
         </div>
@@ -128,40 +128,53 @@
         <div class="other-userdevice-div" style="position:absolute; visibility:hidden;">
           <span class="invalid-userdevice text-danger"> No more than 50 characters! </span>
 
-          <div class="form-floating" >
-                
+          <div class="form-floating">
+
             <textarea class="form-control enter-other-userdevice" placeholder="Leave a comment here"
               id="floatingTextarea2" style="height: 60px; width: 35rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> User Device </label>
-            
+
           </div>
           <span class="userdevice-characters"> 0/50 characters </span>
 
         </div>
-        
+
 
 
         <div class="stats-count">
-          
-          <div class="form-floating">
-            <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 60px; width: 17rem; resize: none;"></textarea>
-            <label for="floatingTextarea2"> Retweets </label>
+          <div>
+            <span class="invalid-retweets text-danger"> Only numbers!! </span>
+            
+            <div class="form-floating">
+              <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 60px; width: 17rem; resize: none;"></textarea>
+              <label for="floatingTextarea2"> Retweets </label>
+            </div>
           </div>
 
-          <div class="form-floating">
-            <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 60px; width: 17rem; resize: none;"></textarea>
-            <label for="floatingTextarea2"> Quotes </label>
+          <div>
+            <span class="invalid-quotes text-danger"> Only numbers!! </span>
+
+            <div class="form-floating">
+              <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 60px; width: 17rem; resize: none;"></textarea>
+              <label for="floatingTextarea2"> Quotes </label>
+            </div>
           </div>
+
 
         </div>
 
-        <div class="form-floating likes-box">
-          <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 60px; width: 17rem; resize: none;"></textarea>
-          <label for="floatingTextarea2"> Likes </label>
+        <div>
+          <span class="invalid-likes text-danger"> Only numbers!! </span>
+
+          <div class="form-floating likes-box">
+            <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 17rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> Likes </label>
+          </div>
         </div>
+        
         <!-- END OF SUB-SECTIONS -->
       </div>
 
@@ -275,4 +288,4 @@
 </html>
 
 <!-- TODO: figure out final color scheme  -->
-
+<!-- TODO: make number od likes/quotes/retweets into k/m format -->
