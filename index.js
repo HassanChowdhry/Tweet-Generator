@@ -1,30 +1,70 @@
 /* eslint-disable no-undef */
-//! logic for first half of tweet
 
-// adding class variables
+//* calling input values
 const enterName = document.querySelector('.enter-name');
 const enterUserName = document.querySelector('.enter-username');
 const enterTweet = document.querySelector('.enter-tweet');
+const enterTime = document.querySelector('.enter-time');
+const enterDate = document.querySelector('.enter-date');
+const enterUserDevice = document.querySelector('.enter-userdevice');
+const enterRetweets = document.querySelector('.enter-retweets');
+const enterQuotes = document.querySelector('.enter-quotes');
+const enterLikes = document.querySelector('.enter-likes');
+const enterOtherUserDevice = document.querySelector('.enter-other-userdevice');
 
+//* calling preview to display user input
 const prevName = document.querySelector('.name');
 const prevUserName = document.querySelector('.username');
 const prevTweet = document.querySelector('.message');
+const prevTime = document.querySelector('.time');
+const prevDate = document.querySelector('.date');
+const prevUserDevice = document.querySelector('.userdevice');
+const prevRetweets = document.querySelector('.retweets');
+const prevQuotes = document.querySelector('.quotes');
+const prevLikes = document.querySelector('.likes');
 
+//* to display number of letters in user input
 const nameCharactersCount = document.querySelector('.name-characters');
 const userNameCharactersCount = document.querySelector('.username-characters');
 const tweetCharactersCount = document.querySelector('.tweet-characters');
+const userDeviceCharactersCount = document.querySelector('.userdevice-characters');
 
+//* used to hide user device input until other is called
+const otherUserDeviceDiv = document.querySelector('.other-userdevice-div');
+
+//* used to hide stats on preview incase of input "0"
+const retweetsDiv = document.querySelector('.retweet-div');
+const quotesDiv = document.querySelector('.quotes-div');
+const likesDiv = document.querySelector('.likes-div');
+
+//* adding error messages for invalid inputs 
+// ? could make these into tooltips
 const nameInvalidText = document.querySelector('.invalid-name');
 const userNameInvalidText = document.querySelector('.invalid-username');
 const tweetInvalidText = document.querySelector('.invalid-tweet');
+const userDeviceInvalidText = document.querySelector('.invalid-userdevice');
+const quotesInvalidText = document.querySelector('.invalid-quotes');
+const likesInvalidText = document.querySelector('.invalid-likes');
+const retweetsInvalidText = document.querySelector('.invalid-retweets');
 
-// functions for event listeners to change preview
+//* calling buttons
+const verifiedButton = document.querySelector('.verified');
+const uploadPfpButton = document.querySelector('.upload');
+const removePfpButton = document.querySelector('.remove');
 
+//* used to add verified badge and pfp in preview
+const verifiedBadge = document.querySelector('.verified-badge');
+const uploadPfpInput = document.querySelector('#pfp-id');
+const prevPfp = document.querySelector('.pfp-image');
+
+//! functions for event listeners to change preview
 function addName() {
-  if (enterName.value.length <= 25) {
-    prevName.innerHTML = enterName.value.trim();
-    nameCharactersCount.innerHTML = `${enterName.value.length}/25 characters`;
+  let nameLength = enterName.value.length;
 
+  if (nameLength <= 25) {
+    prevName.innerHTML = enterName.value.trim();
+    nameCharactersCount.innerHTML = `${nameLength}/25 characters`;
+    
     if (enterName.classList.contains('is-invalid')) {
       enterName.classList.remove('is-invalid');
       nameInvalidText.style.visibility = 'hidden';
@@ -35,14 +75,18 @@ function addName() {
     enterName.classList.add('is-invalid');
     nameInvalidText.style.visibility = 'visible';
     nameInvalidText.style.position = 'relative';
+
+    enterName.value = enterName.value.slice(0, 26);
   }
 
 }
 
 function addUserName() {
-  if (enterUserName.value.length <= 25) {
+  let userNameLength = enterUserName.value.length;
+
+  if (userNameLength <= 25) {
     prevUserName.innerHTML = `@${enterUserName.value.trim()}`;
-    userNameCharactersCount.innerHTML = `${enterUserName.value.length}/25 characters`;
+    userNameCharactersCount.innerHTML = `${userNameLength}/25 characters`;
 
     if (enterUserName.classList.contains('is-invalid')) {
       enterUserName.classList.remove('is-invalid');
@@ -54,6 +98,9 @@ function addUserName() {
     enterUserName.classList.add('is-invalid');
     userNameInvalidText.style.visibility = 'visible';
     userNameInvalidText.style.position = 'relative';
+
+    enterUserName.value = enterUserName.value.slice(0, 26);
+
   }
 
 }
@@ -75,45 +122,13 @@ function addTweet() {
     enterTweet.classList.add('is-invalid');
     tweetInvalidText.style.visibility = 'visible';
     tweetInvalidText.style.position = 'relative';
+
+    enterTweet.value = enterTweet.value.slice(0, 281);
+
   }
 
-  // TODO: make it href for hashtag
+  // TODO: make it href for hashtag and @
 }
-
-// event listeners to change prev
-enterName.addEventListener('input', addName);
-enterUserName.addEventListener('input', addUserName);
-enterTweet.addEventListener('input', addTweet);
-
-//! second half of tweet
-
-// adding variables for entering details part
-const enterTime = document.querySelector('.enter-time');
-const enterDate = document.querySelector('.enter-date');
-const enterUserDevice = document.querySelector('.enter-userdevice');
-const enterRetweets = document.querySelector('.enter-retweets');
-const enterQuotes = document.querySelector('.enter-quotes');
-const enterLikes = document.querySelector('.enter-likes');
-const enterOtherUserDevice = document.querySelector('.enter-other-userdevice');
-
-const otherUserDeviceDiv = document.querySelector('.other-userdevice-div');
-const retweetsDiv = document.querySelector('.retweet-div');
-const quotesDiv = document.querySelector('.quotes-div');
-const likesDiv = document.querySelector('.likes-div');
-
-// adding variables for preview part
-const prevTime = document.querySelector('.time');
-const prevDate = document.querySelector('.date');
-const prevUserDevice = document.querySelector('.userdevice');
-const prevRetweets = document.querySelector('.retweets');
-const prevQuotes = document.querySelector('.quotes');
-const prevLikes = document.querySelector('.likes');
-
-const userDeviceCharactersCount = document.querySelector('.userdevice-characters');
-const userDeviceInvalidText = document.querySelector('.invalid-userdevice');
-const quotesInvalidText = document.querySelector('.invalid-quotes');
-const likesInvalidText = document.querySelector('.invalid-likes');
-const retweetsInvalidText = document.querySelector('.invalid-retweets');
 
 // functions for event listeners to change preview
 function addTime() {
@@ -128,7 +143,7 @@ function addTime() {
 
   } else if (hour === '00') {
     prevTime.innerHTML = `12:${timeArray[1]} am`;
-
+    
   } else if (hour > '12') {
     timeArray[0] = Math.abs(12 - hour);
     prevTime.innerHTML = `${timeArray[0]}:${timeArray[1]} pm`;
@@ -143,6 +158,7 @@ function addTime() {
 }
 
 /**
+ * * used to change format of date to match twitters
  * ? could use switch case
  * @param {Any[]} dateArray
  * @returns {Any[]}
@@ -195,7 +211,7 @@ function addDate() {
   dateArray = monthNumberToWord(dateArray);
   dateArray[0] = dateArray[0].slice(2, 4); //* removes first two numbers from years
 
-  prevDate.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[0]}`;
+  prevDate.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[0]}`; //* from year/mon/day to day/month/year
 }
 
 function addUserDevice() {
@@ -208,6 +224,7 @@ function addUserDevice() {
     otherUserDeviceDiv.style.visibility = 'visible';
     otherUserDeviceDiv.style.position = 'relative';
 
+    //* input for custom user device  
     enterOtherUserDevice.addEventListener('input', () => {
       if (enterOtherUserDevice.value.length <= 50) {
         prevUserDevice.innerHTML = enterOtherUserDevice.value.trim();
@@ -311,25 +328,6 @@ function addLikes() {
 
 }
 
-// event listeners to change prev
-enterDate.addEventListener('input', addDate);
-enterTime.addEventListener('input', addTime);
-enterUserDevice.addEventListener('input', addUserDevice);
-enterRetweets.addEventListener('input', addRetweets);
-enterQuotes.addEventListener('input', addQuotes);
-enterLikes.addEventListener('input', addLikes);
-
-//! Button logic 
-
-// calling them
-const verifiedButton = document.querySelector('.verified');
-const uploadPfpButton = document.querySelector('.upload');
-const removePfpButton = document.querySelector('.remove');
-
-const verifiedBadge = document.querySelector('.verified-badge');
-const uploadPfpInput = document.querySelector('#pfp-id');
-const prevPfp = document.querySelector('.pfp-image');
-
 function addVerifiedLogo() {
 
   if (verifiedBadge.style.visibility === 'visible') {
@@ -343,7 +341,7 @@ function addVerifiedLogo() {
     verifiedButton.style.color = '#fff';
 
     verifiedBadge.style.visibility = 'visible';
-
+    
   }
 }
 
@@ -362,10 +360,6 @@ function removePfp() {
   prevPfp.src = 'GeneratorFigma/avatar.jpg';
 }
 
-verifiedButton.addEventListener('click', addVerifiedLogo);
-uploadPfpButton.addEventListener('click', uploadPfp);
-removePfpButton.addEventListener('click', removePfp);
-
 function save() {
   let div = document.getElementById('widget');
   html2canvas(div).then(
@@ -377,24 +371,17 @@ function save() {
   );
 }
 
-// ? fix tainted promises issue
-// function save() {
-//   alert('hello');
-//   html2canvas(document.querySelector('#widget')).then((canvas) => {
-//     // Export canvas as a blob 
-//     canvas.toBlob((blob) => {
-//       // Generate file download
-//       window.saveAs(blob, 'yourwebsite_screenshot.png');
-//     });
-//   });
-// }
-
-// function save() {
-//   html2canvas(document.querySelector('#widget')).then((canvas) => {
-//     // Export the canvas to its data URI representation
-//     let base64image = canvas.toDataURL('image/png');
-
-//     // Open the image in a new window
-//     window.open(base64image, '_blank');
-//   });
-// }
+//! all event listeners
+enterName.addEventListener('input', addName);
+enterUserName.addEventListener('input', addUserName);
+enterTweet.addEventListener('input', addTweet);
+enterDate.addEventListener('input', addDate);
+enterTime.addEventListener('input', addTime);
+enterUserDevice.addEventListener('input', addUserDevice);
+enterRetweets.addEventListener('input', addRetweets);
+enterQuotes.addEventListener('input', addQuotes);
+enterLikes.addEventListener('input', addLikes);
+        
+verifiedButton.addEventListener('click', addVerifiedLogo);
+uploadPfpButton.addEventListener('click', uploadPfp);
+removePfpButton.addEventListener('click', removePfp);
