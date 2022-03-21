@@ -34,6 +34,8 @@
 
   <h1> Custom Tweet Generator </h1>
 
+
+  <!--! User Input -->
   <section id="tweet">
     <div class="tweet-grid">
 
@@ -181,16 +183,28 @@
     </div>
   </section>
 
-  <!-- PREVIEW -->
+  <!--! PREVIEW -->
   <section id="preview-section">
     <div class="preview">
 
       <h2> Preview </h2>
 
+      <div class="form-check">
+        <input class="form-check-input light" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Light
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input dark" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Dark
+        </label>
+      </div>
+
       <div id="widget" class="prev-container">
-
         <!-- top part -->
-
         <div class="top-container">
 
           <div class="user-identity">
@@ -199,13 +213,15 @@
             <strong class="name"> name </strong>
 
             <img class="verified-badge" src="GeneratorFigma/twitter-verified-badge.svg" alt="Verified-badge"
-              style="width: 5%; visibility: hidden;">
+              style="width: 5%; visibility: hidden;"> 
+              <!-- TODO: find another verified tag to match dark modes -->
 
             <br>
 
-            <span class="username"> @username </span>
+            <span class="username change-color"> @username </span>
           </div>
 
+          <!-- TODO: find new image -->
           <div class="dots">
             <img src="GeneratorFigma/more.png" alt="three-dots">
           </div>
@@ -224,11 +240,11 @@
 
           <div class="tweet-details">
 
-            <span class="time" style="font-size: large;"> 2:30 am </span>
+            <span class="time change-color" style="font-size: large;"> 2:30 am </span>
 
             <strong> &#183; </strong>
 
-            <span class="date" style="font-size: large;"> 12 Mar 22</span>
+            <span class="date change-color" style="font-size: large;"> 12 Mar 22</span>
 
             <strong> &#183; </strong>
 
@@ -242,13 +258,13 @@
 
           <div class="tweet-popularity">
 
-            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span> Retweets </span>
+            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span class="change-color"> Retweets </span>
             </div>
 
-            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span> Quotes Tweets
+            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span class="change-color"> Quotes Tweets
               </span> </div>
 
-            <div class="likes-div"> <strong class="likes"> 2300 </strong> <span> Likes </span>
+            <div class="likes-div"> <strong class="likes"> 2300 </strong> <span class="change-color"> Likes </span>
             </div>
 
           </div>
@@ -256,10 +272,11 @@
           <hr>
 
           <div class="tweet-interact">
-            <div> <img src="GeneratorFigma/twitter-reply.png" alt="Twitter_Reply"> </div>
-            <div> <img src="GeneratorFigma/repost.png" alt=""> </div>
-            <div> <img src="GeneratorFigma/love.png" alt=""> </div>
-            <div> <img src="GeneratorFigma/share.png" alt=""> </div>
+            <!-- TODO: find correct images -->
+            <div> <img src="GeneratorFigma/Twitter_Reply.png" alt="Twitter_Reply"> </div>
+            <div> <img src="GeneratorFigma/" alt=""> </div>
+            <div> <img src="GeneratorFigma/" alt=""> </div>
+            <div> <img src="GeneratorFigma/" alt=""> </div>
           </div>
 
         </div>
@@ -287,6 +304,4 @@
 
 </html>
 
-<!-- TODO: figure out final color scheme  -->
 <!-- TODO: make number od likes/quotes/retweets into k/m format -->
-<!-- TODO: add dark mode option -->

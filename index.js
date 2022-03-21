@@ -240,6 +240,8 @@ function addUserDevice() {
         enterOtherUserDevice.classList.add('is-invalid');
         userDeviceInvalidText.style.visibility = 'visible';
         userDeviceInvalidText.style.position = 'relative';
+
+        enterOtherUserDevice.value = enterOtherUserDevice.value.slice(0, 51);
       }
     });
 
@@ -259,12 +261,18 @@ function addRetweets() {
   } else if (enterRetweets.value.slice(0, 1) === '0') {
     retweetsDiv.style.visibility = 'hidden';
     retweetsDiv.style.position = 'absolute';
+    
+    if (enterRetweets.classList.contains('is-invalid')) {
+      enterRetweets.classList.remove('is-invalid');
+      retweetsInvalidText.style.visibility = 'hidden';
+      retweetsInvalidText.style.position = 'absolute';
+    }
 
   } else {
     retweetsDiv.style.visibility = 'visible';
     retweetsDiv.style.position = 'relative';
     prevRetweets.innerHTML = enterRetweets.value.trim();
-
+    
     if (enterRetweets.classList.contains('is-invalid')) {
       enterRetweets.classList.remove('is-invalid');
       retweetsInvalidText.style.visibility = 'hidden';
@@ -286,6 +294,12 @@ function addQuotes() {
   } else if (enterQuotes.value.slice(0, 1) === '0') {
     quotesDiv.style.visibility = 'hidden';
     quotesDiv.style.position = 'absolute';
+   
+    if (enterQuotes.classList.contains('is-invalid')) {
+      enterQuotes.classList.remove('is-invalid');
+      quotesInvalidText.style.visibility = 'hidden';
+      quotesInvalidText.style.position = 'absolute';
+    }
 
   } else {
     quotesDiv.style.visibility = 'visible';
@@ -313,6 +327,12 @@ function addLikes() {
   } else if (enterLikes.value.slice(0, 1) === '0') {
     likesDiv.style.visibility = 'hidden';
     likesDiv.style.position = 'absolute';
+    
+    if (enterLikes.classList.contains('is-invalid')) {
+      enterLikes.classList.remove('is-invalid');
+      likesInvalidText.style.visibility = 'hidden';
+      likesInvalidText.style.position = 'absolute';
+    }
 
   } else {
     likesDiv.style.visibility = 'visible';
@@ -385,3 +405,29 @@ enterLikes.addEventListener('input', addLikes);
 verifiedButton.addEventListener('click', addVerifiedLogo);
 uploadPfpButton.addEventListener('click', uploadPfp);
 removePfpButton.addEventListener('click', removePfp);
+
+const lightMode = document.querySelector('.light');
+const darkMode = document.querySelector('.dark');
+const previewContainer = document.querySelector('.prev-container');
+const changeColorArray = document.querySelectorAll('.change-color');
+
+function changeToLightMode() {
+  previewContainer.style.backgroundColor = '#fff';
+  previewContainer.style.color = '#000';
+  
+  changeColorArray.forEach((element) => {
+    element.style.color = '#000';
+  });
+}
+
+function changeToDarkMode() {
+  previewContainer.style.backgroundColor = '#000';
+  previewContainer.style.color = '#E7E9EA';
+  
+  changeColorArray.forEach((element) => {
+    element.style.color = '#71767B';
+  });
+}
+
+lightMode.addEventListener('click', changeToLightMode);
+darkMode.addEventListener('click', changeToDarkMode);
