@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-
 //* calling input values
 const enterName = document.querySelector('.enter-name');
 const enterUserName = document.querySelector('.enter-username');
@@ -53,11 +52,65 @@ const uploadPfpButton = document.querySelector('.upload');
 const removePfpButton = document.querySelector('.remove');
 
 //* used to add verified badge and pfp in preview
-const verifiedBadge = document.querySelector('.verified-badge');
+const lightBadge = document.querySelector('.verified-light');
+const darkBadge = document.querySelector('.verified-dark');
 const uploadPfpInput = document.querySelector('#pfp-id');
 const prevPfp = document.querySelector('.pfp-image');
 
+//*
+const lightMode = document.querySelector('.light');
+const darkMode = document.querySelector('.dark');
+const previewContainer = document.querySelector('.prev-container');
+const changeColorArray = document.querySelectorAll('.change-color');
+
 //! functions for event listeners to change preview
+
+function addVerifiedLogo() {
+
+  if (lightMode.checked) {
+
+    if (lightBadge.style.visibility === 'visible') {
+      verifiedButton.style.background = '#fff';
+      verifiedButton.style.color = '#000';
+
+      lightBadge.style.visibility = 'hidden';
+      lightBadge.style.position = 'absolute';
+    
+    } else {
+      verifiedButton.style.background = '#000';
+      verifiedButton.style.color = '#fff';
+
+      lightBadge.style.visibility = 'visible';
+      lightBadge.style.position = 'relative';
+
+      darkBadge.style.visibility = 'hidden';
+      darkBadge.style.position = 'absolute';
+
+    }
+  
+  } else if (darkMode.checked) {
+
+    if (darkBadge.style.visibility === 'visible') {
+      verifiedButton.style.background = '#fff';
+      verifiedButton.style.color = '#000';
+
+      darkBadge.style.visibility = 'hidden';
+      darkBadge.style.position = 'absolute';
+    
+    } else {
+      verifiedButton.style.background = '#000';
+      verifiedButton.style.color = '#fff';
+
+      darkBadge.style.visibility = 'visible';
+      darkBadge.style.position = 'relative';
+
+      lightBadge.style.visibility = 'hidden';
+      lightBadge.style.position = 'absolute';
+    
+    }
+  }
+}
+
 function addName() {
   let nameLength = enterName.value.length;
 
@@ -348,23 +401,6 @@ function addLikes() {
 
 }
 
-function addVerifiedLogo() {
-
-  if (verifiedBadge.style.visibility === 'visible') {
-    verifiedButton.style.background = '#fff';
-    verifiedButton.style.color = '#000';
-
-    verifiedBadge.style.visibility = 'hidden';
-
-  } else {
-    verifiedButton.style.background = '#000';
-    verifiedButton.style.color = '#fff';
-
-    verifiedBadge.style.visibility = 'visible';
-    
-  }
-}
-
 function uploadPfp() {
   uploadPfpInput.click();
 
@@ -391,6 +427,32 @@ function save() {
   );
 }
 
+function changeToLightMode() {
+
+  if (darkBadge.style.visibility === 'visible') {
+    addVerifiedLogo();
+  }
+
+  previewContainer.style.backgroundColor = '#fff';
+  previewContainer.style.color = '#000';
+  
+  changeColorArray.forEach((element) => {
+    element.style.color = '#000';
+  });
+}
+
+function changeToDarkMode() {
+  if (lightBadge.style.visibility === 'visible') {
+    addVerifiedLogo();
+  }
+  previewContainer.style.backgroundColor = '#000';
+  previewContainer.style.color = '#E7E9EA';
+  
+  changeColorArray.forEach((element) => {
+    element.style.color = '#71767B';
+  });
+}
+
 //! all event listeners
 enterName.addEventListener('input', addName);
 enterUserName.addEventListener('input', addUserName);
@@ -405,29 +467,6 @@ enterLikes.addEventListener('input', addLikes);
 verifiedButton.addEventListener('click', addVerifiedLogo);
 uploadPfpButton.addEventListener('click', uploadPfp);
 removePfpButton.addEventListener('click', removePfp);
-
-const lightMode = document.querySelector('.light');
-const darkMode = document.querySelector('.dark');
-const previewContainer = document.querySelector('.prev-container');
-const changeColorArray = document.querySelectorAll('.change-color');
-
-function changeToLightMode() {
-  previewContainer.style.backgroundColor = '#fff';
-  previewContainer.style.color = '#000';
-  
-  changeColorArray.forEach((element) => {
-    element.style.color = '#000';
-  });
-}
-
-function changeToDarkMode() {
-  previewContainer.style.backgroundColor = '#000';
-  previewContainer.style.color = '#E7E9EA';
-  
-  changeColorArray.forEach((element) => {
-    element.style.color = '#71767B';
-  });
-}
 
 lightMode.addEventListener('click', changeToLightMode);
 darkMode.addEventListener('click', changeToDarkMode);

@@ -13,7 +13,6 @@ h1, h2, h3 {
 
 hr{
   margin: 0.5rem 0;    
-  border: 1px solid #71767B;
 
 }
 
@@ -149,6 +148,12 @@ position: absolute;
 .name {
   font-size: large;
   line-height: 30px;
+}
+
+.verified-badge {
+  position: absolute;
+  visibility: hidden;
+  width: 5%;
 }
 
 .username {
