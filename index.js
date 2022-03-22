@@ -213,8 +213,8 @@ function addTime() {
 /**
  * * used to change format of date to match twitters
  * ? could use switch case
- * @param {Any[]} dateArray
- * @returns {Any[]}
+ * @param {string[]} dateArray
+ * @returns {string[]}
  */
 function monthNumberToWord(dateArray) {
   let dateMonth = dateArray[1];
@@ -300,6 +300,44 @@ function addUserDevice() {
 
   }
 }
+/**
+ * *Add k,m,b to number
+ * @param {string} num 
+ * @returns {string}
+ */
+function reduceNumToPrefix(num) {
+  if (num.length > 9) {
+    num = `${num.slice(0, 1)}.${num.slice(1, 4)}`;
+    return `${num}b`;
+  }
+  if (num.length > 6) {
+    if (num.length === 7) {
+      num = `${num.slice(0, 1)}.${num.slice(1, 2)}`;
+    }
+    if (num.length === 8) {
+      num = `${num.slice(0, 2)}.${num.slice(2, 3)}`;
+    }
+    if (num.length === 9) {
+      num = `${num.slice(0, 3)}.${num.slice(3, 4)}`;
+    }
+    return `${num}m`;
+  }
+
+  if (num.length > 3) {
+    if (num.length === 4) {
+      num = `${num.slice(0, 1)}.${num.slice(1, 2)}`;
+    }
+    if (num.length === 5) {
+      num = `${num.slice(0, 2)}.${num.slice(2, 3)}`;
+    }
+    if (num.length === 6) {
+      num = `${num.slice(0, 3)}.${num.slice(3, 4)}`;
+    }
+    return `${num}k`;
+  }
+  
+  return num;
+}
 
 function addRetweets() {
   let isNum = /^\d+$/.test(enterRetweets.value);
@@ -324,7 +362,9 @@ function addRetweets() {
   } else {
     retweetsDiv.style.visibility = 'visible';
     retweetsDiv.style.position = 'relative';
-    prevRetweets.innerHTML = enterRetweets.value.trim();
+    
+    let reduceNum = reduceNumToPrefix(enterRetweets.value.trim());
+    prevRetweets.innerHTML = reduceNum;
     
     if (enterRetweets.classList.contains('is-invalid')) {
       enterRetweets.classList.remove('is-invalid');
@@ -357,7 +397,9 @@ function addQuotes() {
   } else {
     quotesDiv.style.visibility = 'visible';
     quotesDiv.style.position = 'relative';
-    prevQuotes.innerHTML = enterQuotes.value.trim();
+
+    let reduceNum = reduceNumToPrefix(enterQuotes.value.trim());
+    prevQuotes.innerHTML = reduceNum;
 
     if (enterQuotes.classList.contains('is-invalid')) {
       enterQuotes.classList.remove('is-invalid');
@@ -390,7 +432,9 @@ function addLikes() {
   } else {
     likesDiv.style.visibility = 'visible';
     likesDiv.style.position = 'relative';
-    prevLikes.innerHTML = enterLikes.value.trim();
+
+    let reduceNum = reduceNumToPrefix(enterLikes.value.trim());
+    prevLikes.innerHTML = reduceNum;
     
     if (enterLikes.classList.contains('is-invalid')) {
       enterLikes.classList.remove('is-invalid');

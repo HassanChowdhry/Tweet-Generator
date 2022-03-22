@@ -13,7 +13,6 @@ h1, h2, h3 {
 
 hr{
   margin: 0.5rem 0;    
-
 }
 
 /** all invalid inputs  */
@@ -153,7 +152,7 @@ position: absolute;
 .verified-badge {
   position: absolute;
   visibility: hidden;
-  width: 5%;
+  width: 4%;
 }
 
 .username {
