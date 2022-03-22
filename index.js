@@ -65,6 +65,16 @@ const changeColorArray = document.querySelectorAll('.change-color');
 
 //! functions for event listeners to change preview
 
+function hide(name) {
+  name.style.visibility = 'hidden';
+  name.style.position = 'absolute';
+}
+
+function show(name) {
+  name.style.visibility = 'visible';
+  name.style.position = 'relative';
+}
+
 function addVerifiedLogo() {
 
   if (lightMode.checked) {
@@ -73,19 +83,14 @@ function addVerifiedLogo() {
       verifiedButton.style.background = '#fff';
       verifiedButton.style.color = '#000';
 
-      lightBadge.style.visibility = 'hidden';
-      lightBadge.style.position = 'absolute';
+      hide(lightBadge);
     
     } else {
       verifiedButton.style.background = '#000';
       verifiedButton.style.color = '#fff';
 
-      lightBadge.style.visibility = 'visible';
-      lightBadge.style.position = 'relative';
-
-      darkBadge.style.visibility = 'hidden';
-      darkBadge.style.position = 'absolute';
-
+      show(lightBadge);    
+      hide(darkBadge);
     }
   
   } else if (darkMode.checked) {
@@ -94,19 +99,14 @@ function addVerifiedLogo() {
       verifiedButton.style.background = '#fff';
       verifiedButton.style.color = '#000';
 
-      darkBadge.style.visibility = 'hidden';
-      darkBadge.style.position = 'absolute';
+      hide(darkBadge);
     
     } else {
       verifiedButton.style.background = '#000';
       verifiedButton.style.color = '#fff';
 
-      darkBadge.style.visibility = 'visible';
-      darkBadge.style.position = 'relative';
-
-      lightBadge.style.visibility = 'hidden';
-      lightBadge.style.position = 'absolute';
-    
+      show(darkBadge);
+      hide(lightBadge);
     }
   }
 }
@@ -120,15 +120,14 @@ function addName() {
     
     if (enterName.classList.contains('is-invalid')) {
       enterName.classList.remove('is-invalid');
-      nameInvalidText.style.visibility = 'hidden';
-      nameInvalidText.style.position = 'absolute';
+
+      hide(nameInvalidText);
     }
 
   } else {
     enterName.classList.add('is-invalid');
-    nameInvalidText.style.visibility = 'visible';
-    nameInvalidText.style.position = 'relative';
-
+    show(nameInvalidText);
+    
     enterName.value = enterName.value.slice(0, 26);
   }
 
@@ -143,14 +142,13 @@ function addUserName() {
 
     if (enterUserName.classList.contains('is-invalid')) {
       enterUserName.classList.remove('is-invalid');
-      userNameInvalidText.style.visibility = 'hidden';
-      userNameInvalidText.style.position = 'absolute';
+     
+      hide(userNameInvalidText);
     }
 
   } else {
     enterUserName.classList.add('is-invalid');
-    userNameInvalidText.style.visibility = 'visible';
-    userNameInvalidText.style.position = 'relative';
+    show(userDeviceInvalidText);
 
     enterUserName.value = enterUserName.value.slice(0, 26);
 
@@ -167,14 +165,13 @@ function addTweet() {
 
     if (enterTweet.classList.contains('is-invalid')) {
       enterTweet.classList.remove('is-invalid');
-      tweetInvalidText.style.visibility = 'hidden';
-      tweetInvalidText.style.position = 'absolute';
+      
+      hide(tweetInvalidText);
     }
 
   } else {
     enterTweet.classList.add('is-invalid');
-    tweetInvalidText.style.visibility = 'visible';
-    tweetInvalidText.style.position = 'relative';
+    show(tweetInvalidText);
 
     enterTweet.value = enterTweet.value.slice(0, 281);
 
@@ -269,14 +266,13 @@ function addDate() {
 
 function addUserDevice() {
   if (enterUserDevice.value !== 'Other') {
-    otherUserDeviceDiv.style.visibility = 'hidden';
-    otherUserDeviceDiv.style.position = 'absolute';
+    hide(otherUserDeviceDiv);
+    
     prevUserDevice.innerHTML = enterUserDevice.value.trim();
 
   } else {
-    otherUserDeviceDiv.style.visibility = 'visible';
-    otherUserDeviceDiv.style.position = 'relative';
-
+    show(otherUserDeviceDiv);
+    
     //* input for custom user device  
     enterOtherUserDevice.addEventListener('input', () => {
       if (enterOtherUserDevice.value.length <= 50) {
@@ -285,14 +281,13 @@ function addUserDevice() {
 
         if (enterOtherUserDevice.classList.contains('is-invalid')) {
           enterOtherUserDevice.classList.remove('is-invalid');
-          userDeviceInvalidText.style.visibility = 'hidden';
-          userDeviceInvalidText.style.position = 'absolute';
+
+          hide(userDeviceInvalidText);
         }
 
       } else {
         enterOtherUserDevice.classList.add('is-invalid');
-        userDeviceInvalidText.style.visibility = 'visible';
-        userDeviceInvalidText.style.position = 'relative';
+        show(userDeviceInvalidText);
 
         enterOtherUserDevice.value = enterOtherUserDevice.value.slice(0, 51);
       }
@@ -344,32 +339,29 @@ function addRetweets() {
 
   if (!isNum) {
     enterRetweets.classList.add('is-invalid');
-    retweetsInvalidText.style.visibility = 'visible';
-    retweetsInvalidText.style.position = 'relative';
+    show(retweetsInvalidText);
 
     enterRetweets.value = enterRetweets.value.slice(0, enterRetweets.value.length - 1);
   
   } else if (enterRetweets.value.slice(0, 1) === '0') {
-    retweetsDiv.style.visibility = 'hidden';
-    retweetsDiv.style.position = 'absolute';
+    hide(retweetsDiv);
     
     if (enterRetweets.classList.contains('is-invalid')) {
       enterRetweets.classList.remove('is-invalid');
-      retweetsInvalidText.style.visibility = 'hidden';
-      retweetsInvalidText.style.position = 'absolute';
+    
+      hide(retweetsInvalidText);
     }
 
   } else {
-    retweetsDiv.style.visibility = 'visible';
-    retweetsDiv.style.position = 'relative';
+    show(retweetsDiv);
     
     let reduceNum = reduceNumToPrefix(enterRetweets.value.trim());
     prevRetweets.innerHTML = reduceNum;
     
     if (enterRetweets.classList.contains('is-invalid')) {
       enterRetweets.classList.remove('is-invalid');
-      retweetsInvalidText.style.visibility = 'hidden';
-      retweetsInvalidText.style.position = 'absolute';
+
+      hide(retweetsInvalidText);
     }
   }
 }
@@ -379,32 +371,29 @@ function addQuotes() {
 
   if (!isNum) {
     enterQuotes.classList.add('is-invalid');
-    quotesInvalidText.style.visibility = 'visible';
-    quotesInvalidText.style.position = 'relative';
+    show(quotesInvalidText);
     
     enterQuotes.value = enterQuotes.value.slice(0, enterQuotes.value.length - 1);
   
   } else if (enterQuotes.value.slice(0, 1) === '0') {
-    quotesDiv.style.visibility = 'hidden';
-    quotesDiv.style.position = 'absolute';
+    hide(quotesDiv);
    
     if (enterQuotes.classList.contains('is-invalid')) {
       enterQuotes.classList.remove('is-invalid');
-      quotesInvalidText.style.visibility = 'hidden';
-      quotesInvalidText.style.position = 'absolute';
+     
+      hide(quotesInvalidText);
     }
 
   } else {
-    quotesDiv.style.visibility = 'visible';
-    quotesDiv.style.position = 'relative';
+    show(quotesDiv);
 
     let reduceNum = reduceNumToPrefix(enterQuotes.value.trim());
     prevQuotes.innerHTML = reduceNum;
 
     if (enterQuotes.classList.contains('is-invalid')) {
       enterQuotes.classList.remove('is-invalid');
-      quotesInvalidText.style.visibility = 'hidden';
-      quotesInvalidText.style.position = 'absolute';
+
+      hide(quotesInvalidText);
     }
   }
 }
@@ -414,32 +403,29 @@ function addLikes() {
 
   if (!isNum) {
     enterLikes.classList.add('is-invalid');
-    likesInvalidText.style.visibility = 'visible';
-    likesInvalidText.style.position = 'relative';
-
+    show(likesInvalidText);
+  
     enterLikes.value = enterLikes.value.slice(0, enterLikes.value.length - 1);
  
   } else if (enterLikes.value.slice(0, 1) === '0') {
-    likesDiv.style.visibility = 'hidden';
-    likesDiv.style.position = 'absolute';
+    hide(likesDiv);
     
     if (enterLikes.classList.contains('is-invalid')) {
       enterLikes.classList.remove('is-invalid');
-      likesInvalidText.style.visibility = 'hidden';
-      likesInvalidText.style.position = 'absolute';
+      
+      hide(likesInvalidText);
     }
 
   } else {
-    likesDiv.style.visibility = 'visible';
-    likesDiv.style.position = 'relative';
+    show(likesDiv);
 
     let reduceNum = reduceNumToPrefix(enterLikes.value.trim());
     prevLikes.innerHTML = reduceNum;
     
     if (enterLikes.classList.contains('is-invalid')) {
       enterLikes.classList.remove('is-invalid');
-      likesInvalidText.style.visibility = 'hidden';
-      likesInvalidText.style.position = 'absolute';
+
+      hide(likesInvalidText);
     }
   }
 
