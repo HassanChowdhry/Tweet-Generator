@@ -103,7 +103,6 @@ position: absolute;
 }
 
 /* Preview */
-
 .preview {
   margin: 10rem 15rem;
   padding: 3rem 10rem;
@@ -131,6 +130,7 @@ position: absolute;
 
 }
 
+/* Top part */
 .top-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -187,11 +187,9 @@ position: absolute;
   -webkit-line-clamp: auto;
   /* number of lines to show */
   -webkit-box-orient: vertical;
-
 }
 
 /* bottom part */
-
 .bottom-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -200,6 +198,7 @@ position: absolute;
 
 .tweet-details span {
   margin: 0 0.3rem;
+  font-size: large;
 }
 
 .userdevice-link {
