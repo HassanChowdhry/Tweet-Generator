@@ -487,13 +487,14 @@ function changeToDarkMode() {
 enterName.addEventListener('input', addName);
 enterUserName.addEventListener('input', addUserName);
 enterTweet.addEventListener('input', addTweet);
+
 enterDate.addEventListener('input', addDate);
 enterTime.addEventListener('input', addTime);
 enterUserDevice.addEventListener('input', addUserDevice);
 enterRetweets.addEventListener('input', addRetweets);
 enterQuotes.addEventListener('input', addQuotes);
 enterLikes.addEventListener('input', addLikes);
-        
+
 verifiedButton.addEventListener('click', addVerifiedLogo);
 uploadPfpButton.addEventListener('click', uploadPfp);
 removePfpButton.addEventListener('click', removePfp);
