@@ -3,9 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,500&family=Roboto&family=Ubuntu&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
@@ -19,6 +24,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <title>Tweet Generator</title>
 
@@ -28,6 +34,8 @@
 
   <h1> Custom Tweet Generator </h1>
 
+
+  <!--! User Input -->
   <section id="tweet">
     <div class="tweet-grid">
 
@@ -38,31 +46,51 @@
         </div>
 
         <div>
-          <button class="btn verified test"> Verified </button>
-        </div>
-
-        <div class="form-floating">
-          <textarea class="form-control enter-name" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 60px; width: 35rem; resize: none;"></textarea>
-          <label for="floatingTextarea2">Name</label>
-        </div>
-
-        <div class="form-floating">
-          <textarea class="form-control enter-username" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 60px; width: 35rem; resize: none;"></textarea>
-          <label for="floatingTextarea2">Username</label>
-        </div>
-
-        <div class="form-floating">
-          <textarea class="form-control enter-tweet" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 100px; width: 35rem;"></textarea>
-          <label for="floatingTextarea2">Tweet</label>
-
+          <button class="btn verified"> Verified </button>
         </div>
 
         <div>
-          <button class="btn"> Upload pfp </button>
-          <button class="btn"> remove pfp </button>
+          <span class="invalid-name text-danger"> No more than 25 characters! </span>
+
+          <div class="form-floating">
+            <textarea class="form-control enter-name" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 35rem; resize: none;"></textarea>
+            <label for="floatingTextarea2">Name</label>
+          </div>
+
+
+          <span class="name-characters"> 0/25 characters </span>
+        </div>
+
+        <div>
+          <span class="invalid-username text-danger"> No more than 25 characters! </span>
+
+          <div class="form-floating">
+            <textarea class="form-control enter-username" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 60px; width: 35rem; resize: none;"></textarea>
+            <label for="floatingTextarea2">Username</label>
+          </div>
+
+          <span class="username-characters"> 0/25 characters </span>
+        </div>
+
+        <div>
+          <span class="invalid-tweet text-danger"> No more than 280 characters! </span>
+
+          <div class="form-floating">
+            <textarea class="form-control enter-tweet" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px; width: 35rem;"></textarea>
+            <label for="floatingTextarea2">Tweet</label>
+          </div>
+
+          <span class="tweet-characters"> 0/280 characters </span>
+        </div>
+
+
+        <div class="upload-button">
+          <button class="btn upload"> <input id='pfp-id' type='file' hidden /> Upload pfp </button>
+          <button class="btn remove"> remove pfp </button>
+
         </div>
 
       </div>
@@ -72,80 +100,131 @@
           <h3> Tweet Stats </h3>
         </div>
 
-
         <div>
-          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="date"> Date: </label>
           <br>
           <input class="enter-date" type="date" name="date" id="date">
         </div>
 
         <div>
-          <!-- TODO: for now just make skeletons and desgin figure out the inout later -->
           <label for="time"> Time: </label>
           <br>
           <input class="enter-time" type="time" name="time" id="time">
         </div>
 
+
         <div class="form-floating">
-          <textarea class="form-control enter-userdevice" placeholder="Leave a comment here" id="floatingTextarea2"
-            style="height: 60px; width: 35rem; resize: none;"></textarea>
-          <label for="floatingTextarea2">User Device</label>
+          <select class="form-select enter-userdevice" id="floatingSelect" aria-label="Floating label select example"
+            style="height: 60px; width: 35rem; resize: none;">
+
+            <option selected> Twitter for Android </option>
+            <option value="Twitter for iPhone"> Twitter for iPhone </option>
+            <option value="Twitter Web App"> Twitter Web App </option>
+            <option value="TweetDeck"> TweetDeck </option>
+            <option value="Other"> Other </option>
+
+          </select>
+          <label for="floatingSelect"> User Device </label>
+
         </div>
 
+        <div class="other-userdevice-div" style="position:absolute; visibility:hidden;">
+          <span class="invalid-userdevice text-danger"> No more than 50 characters! </span>
+
+          <div class="form-floating">
+
+            <textarea class="form-control enter-other-userdevice" placeholder="Leave a comment here"
+              id="floatingTextarea2" style="height: 60px; width: 35rem; resize: none;"></textarea>
+            <label for="floatingTextarea2"> User Device </label>
+
+          </div>
+          <span class="userdevice-characters"> 0/50 characters </span>
+
+        </div>
+
+
+
         <div class="stats-count">
-
-          <div class="form-floating">
-            <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 60px; width: 17rem; resize: none;"></textarea>
-            <label for="floatingTextarea2"> Retweets </label>
+          <div>
+            <span class="invalid-retweets text-danger"> Only numbers!! </span>
+            
+            <div class="form-floating">
+              <textarea class="form-control enter-retweets" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 60px; width: 17rem; resize: none;"></textarea>
+              <label for="floatingTextarea2"> Retweets </label>
+            </div>
           </div>
 
-          <div class="form-floating">
-            <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 60px; width: 17rem; resize: none;"></textarea>
-            <label for="floatingTextarea2"> Quotes </label>
+          <div>
+            <span class="invalid-quotes text-danger"> Only numbers!! </span>
+
+            <div class="form-floating">
+              <textarea class="form-control enter-quotes" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 60px; width: 17rem; resize: none;"></textarea>
+              <label for="floatingTextarea2"> Quotes </label>
+            </div>
           </div>
 
-          <div class="form-floating">
+
+        </div>
+
+        <div>
+          <span class="invalid-likes text-danger"> Only numbers!! </span>
+
+          <div class="form-floating likes-box">
             <textarea class="form-control enter-likes" placeholder="Leave a comment here" id="floatingTextarea2"
               style="height: 60px; width: 17rem; resize: none;"></textarea>
             <label for="floatingTextarea2"> Likes </label>
-
           </div>
-
         </div>
+        
         <!-- END OF SUB-SECTIONS -->
       </div>
 
     </div>
   </section>
 
-  <!-- PREVIEW -->
-  <section id="preview">
-    <div class="preview-grid">
-      <h3> Preview </h3>
+  <!--! PREVIEW -->
+  <section id="preview-section">
+    <div class="preview">
 
-      <div class="prev-container">
+      <h2> Preview </h2>
 
+      <div class="form-check">
+        <input class="form-check-input light" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Light
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input dark" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Dark
+        </label>
+      </div>
+
+      <div id="widget" class="prev-container">
+        
         <!-- top part -->
-
         <div class="top-container">
 
-          <div class="pfp">
-            <img src="GeneratorFigma/avatar.jpg" alt="avatar">
-          </div>
-
           <div class="user-identity">
-            <strong class="name">name</strong>
+            <img class='pfp-image' src="Tweet-Icons/avatar.jpg" alt="profile-pic">
 
+            <strong class="name"> name </strong>
+
+            <img class="verified-light verified-badge" src="Tweet-Icons/twitter-verified-badge.svg" alt="light-badge"> 
+            
+            <img class="verified-dark verified-badge" src="Tweet-Icons/twitter-verified-darkmode.png" alt="dark-badge"> 
+           
             <br>
 
-            <i class="username"> @username </i>
+            <span class="username change-color"> @username </span>
           </div>
 
           <div class="dots">
-            <img src="GeneratorFigma/more.png" alt="three-dots">
+            <img src="Tweet-Icons/dots.jpg" alt="three-dots">
           </div>
 
         </div>
@@ -154,11 +233,7 @@
 
         <div class="middle-container">
 
-          <div class="tweet">
-            <!-- TODO: Contain this inside div -->
-            <strong class="message"> Create a fake tweet to fool your freinds!!! </strong> 
-          </div>
-
+          <p class="message"> Create a fake tweet to fool your friends!!! </p>
 
         </div>
 
@@ -166,9 +241,16 @@
 
           <div class="tweet-details">
 
-            <i class="time"> 2:30 AM </i>
-            <i class="date"> August 12, 2022</i>
-            <i class="userdevice"> Twitter for Android </i>  <!-- TODO: add options to user Device -->
+            <span class="time change-color"> 2:30 am </span>
+
+            <strong class="change-color"> &#183; </strong>
+
+            <span class="date change-color"> 12 Mar 22</span>
+
+            <strong class="change-color"> &#183; </strong>
+
+            <a href="https://help.twitter.com/en/using-twitter/how-to-tweet#source-labels" target="blank"
+              class="userdevice-link"> <span class="userdevice"> Twitter for Android </span> </a>
 
 
           </div>
@@ -177,29 +259,24 @@
 
           <div class="tweet-popularity">
 
-            <div>
-              <strong class="retweets"> 20 </strong> <i> retweets </i>
+            <div class="retweet-div"> <strong class="retweets "> 20 </strong> <span class="change-color"> Retweets </span>
             </div>
 
-            <div>
-              <strong class="quotes"> 40 </strong> <i> quotes </i>
-            </div>
-            
-            <div>
-              <strong class="likes"> 2300 </strong> <i> likes </i>
-            </div>
+            <div class="quotes-div"> <strong class="quotes"> 40 </strong> <span class="change-color"> Quotes Tweets
+              </span> </div>
 
-            
+            <div class="likes-div"> <strong class="likes"> 2300 </strong> <span class="change-color"> Likes </span>
+            </div>
 
           </div>
 
           <hr>
 
           <div class="tweet-interact">
-            <div> <img src="GeneratorFigma/Twitter_Reply.png" alt="Twitter_Reply"> </div>
-            <div> <img src="GeneratorFigma/repost.png" alt=""> </div>
-            <div> <img src="GeneratorFigma/love.png" alt=""> </div>
-            <div> <img src="GeneratorFigma/upload.png" alt=""> </div>
+            <div> <img src="Tweet-Icons/Twitter_Reply.png" alt="Twitter_Reply"> </div>
+            <div> <img src="Tweet-Icons/Retweet.png" alt=""> </div>
+            <div> <img src="Tweet-Icons/like.png" alt=""> </div>
+            <div> <img src="Tweet-Icons/share.png" alt=""> </div>
           </div>
 
         </div>
@@ -207,18 +284,22 @@
 
       </div>
 
+      <div style="margin-bottom: 1rem;">
+        <button class="btn" style="margin: auto;" onclick="save()"> Download </button>
+      </div>
+
+      <div id="output"></div>
+
     </div>
 
   </section>
 
+
   <!-- Tweet Generator -->
   <section id="tweet-generator">
-
   </section>
 
   <script src="index.js"></script>
 </body>
 
 </html>
-
-<!-- TODO: fix how preview looks and date format -->
