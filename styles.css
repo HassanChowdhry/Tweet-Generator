@@ -1,6 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -10,7 +9,7 @@ h1 {
 h1,
 h2,
 h3 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 hr {
@@ -28,8 +27,7 @@ hr {
 .tweet-grid {
   background-color: #add8e6;
 
-  box-shadow:
-    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+  box-shadow: 3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
     8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
     17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
     36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
@@ -39,7 +37,6 @@ hr {
   grid-template-columns: 1fr 1fr;
   margin: 5rem 15rem;
   padding: 3rem;
-
 }
 
 /* 1st half section */
@@ -64,7 +61,6 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 
 /* From css buttons.io */
 .btn {
@@ -109,8 +105,7 @@ hr {
   margin: 10rem 15rem;
   padding: 3rem 10rem;
   background-color: lightblue;
-  box-shadow:
-    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+  box-shadow: 3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
     8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
     17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
     36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
@@ -129,13 +124,17 @@ hr {
   grid-template-columns: 1fr;
   background-color: white;
   height: fit-content;
-
+  padding: 1em 2em;
+  border-radius: 1em;
 }
 
 /* Top part */
 .top-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.user-identity {
+  margin-bottom: 1em;
 }
 
 .pfp-image {
@@ -176,7 +175,6 @@ hr {
   font-weight: 400;
 }
 
-
 .message {
   word-break: break-word;
   overflow: hidden;
@@ -197,10 +195,14 @@ hr {
   grid-template-columns: 1fr;
 }
 
-
 .tweet-details span {
   margin: 0 0.3rem;
   font-size: large;
+  color: #888;
+}
+
+.tweet-details a span {
+  color: rgb(29, 98, 247);
 }
 
 .userdevice-link {
@@ -234,7 +236,6 @@ hr {
   width: 15%;
 }
 
-
 #output {
   display: grid;
   grid-row-gap: 2rem;
@@ -243,7 +244,6 @@ hr {
 }
 
 @media (max-width: 1920px) {
-
   .tweet-grid {
     margin: 5rem 10rem;
   }
@@ -254,7 +254,6 @@ hr {
     grid-row-gap: 2rem;
     justify-items: center;
   }
-
 }
 
 @media (max-width: 1600px) {
@@ -272,7 +271,6 @@ hr {
 }
 
 @media (max-width: 1300px) {
-
   .tweet-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -282,7 +280,6 @@ hr {
   .tweet-info {
     border-right: none;
     border-bottom: 1px solid black;
-
   }
 
   .tweet-grid {
